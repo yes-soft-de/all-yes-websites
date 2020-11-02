@@ -23,6 +23,7 @@
 		wp_enqueue_script( 'popper-js', get_template_directory_uri() . '/js/popper.min.js', array('jquery'), false, true );
 		// add bootstrap to wordpress
 		wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), false, true );
+		wp_enqueue_script( 'typed-js', 'https://cdn.jsdelivr.net/npm/typed.js@2.0.11', array('jquery'), false, true );
 		// add our custom file to wordpress
 		wp_enqueue_script( 'custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery'), false, true );
 		// add condition for internet explorer 9 and less

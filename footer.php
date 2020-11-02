@@ -4,8 +4,7 @@
 	*/
 ?>
 <?php
-	$templateName = yes_user_get_template_name();
-	if ($templateName != 'Landing Page'): ?>
+	if ( !is_front_page() ): ?>
       <footer class="bg-white">
         <div class="container-fluid">
           <div class="row">

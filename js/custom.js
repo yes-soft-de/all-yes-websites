@@ -109,5 +109,17 @@ jQuery(document).ready( function( $ ) {
 
 
 
+  var typed3 = new Typed('#typed-header', {
+    strings: ['Say Yes To: ...', 'Say Yes To: <i>Creative</i>', 'Say Yes To: <strong>Magnate</strong>', '', 'Say Yes To: Yes User'],
+    typeSpeed: 50,
+    backSpeed: 50,
+    // backDelay: 500,
+    // startDelay: 500,
+    smartBackspace: true, // this is a default
+    loop: true
+  });
+
+
+
 
 });

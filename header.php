@@ -14,8 +14,7 @@
 <body <?php body_class(); ?>>
 
 <?php
-  $templateName = yes_user_get_template_name();
-  if ($templateName != 'Landing Page'): ?>
+  if ( !is_front_page() ): ?>
 
   <nav class="navbar navbar-expand-lg navbar-desktop">
 

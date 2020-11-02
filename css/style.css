@@ -380,6 +380,10 @@ article.our-projects .project-content p {
   background-size: cover;
   position: relative;
 }
+.landing-page > h2 {
+  font-size: 4rem;
+  padding-left: 7%;
+}
 .landing-page .landing-page-sidebar {
   position: absolute;
   top: 0;
@@ -398,13 +402,6 @@ article.our-projects .project-content p {
 .landing-page .landing-page-sidebar .sidebar-navigate-home {
   position: relative;
 }
-.landing-page .landing-page-sidebar .sidebar-navigate-home a {
-  color: #fff;
-  text-decoration: none;
-}
-.landing-page .landing-page-sidebar .sidebar-navigate-home a:hover {
-  color: #aaa;
-}
 .landing-page .landing-page-sidebar .sidebar-navigate-home:before {
   content: "";
   display: inline-block;
@@ -414,10 +411,28 @@ article.our-projects .project-content p {
   -moz-background-size: contain;
   -o-background-size: contain;
   background-size: contain;
-  width: 17%;
+  width: 15%;
   height: 50px;
-  top: 0;
-  left: 0;
+  top: -2px;
+  left: 45px;
+}
+.landing-page .landing-page-sidebar .sidebar-navigate-contact {
+  border: 4px solid #fff;
+  border-radius: 20px;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+.landing-page .landing-page-sidebar a {
+  color: #fff;
+  text-decoration: none;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.landing-page .landing-page-sidebar a:hover {
+  color: #aaa;
 }
 
 /*
