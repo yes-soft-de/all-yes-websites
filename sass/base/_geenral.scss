@@ -12,6 +12,34 @@ body {
   height: 100%;
 }
 
+.service-box {
+  border-width: 3px;
+  border-style: solid;
+}
+
+.card-button {
+  border: 1px solid #a2a8b1;
+  display: inline-block;
+  color: #6c5ce7;
+  font-size: 1.2rem;
+}
+
+.background-canvas {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    top: 17%;
+    right: 0;
+    width: 55vw;
+    height: 105vh;
+    background: url("../images/icons/blog-background.png") center center no-repeat;
+    @include backgroundSize(cover);
+    z-index: -1;
+  }
+}
+
 .bg-bright-green {
   background-color: $bright-green;
 }
@@ -56,35 +84,43 @@ body {
   background-color: $grey;
 }
 
-.border-bright-green {
+.border-bright-green,
+.border-branding-graphic-design {
   border-color: $bright-green;
 }
 
-.border-bright-yellow {
+.border-bright-yellow,
+.border-ux-studies {
   border-color: $bright-yellow;
 }
 
-.border-orange {
+.border-orange,
+.border-ui-review-provide-solutions {
   border-color: $orange;
 }
 
-.border-grey-border {
+.border-grey-border,
+.border-digital-strategy {
   border-color: $grey-border;
 }
 
-.border-bing {
+.border-bing,
+.border-ux-counseling {
   border-color: $bing;
 }
 
-.border-sky-blue {
+.border-sky-blue,
+.border-ux-review-provide-solutions {
   border-color: $sky-blue;
 }
 
-.border-red {
+.border-red,
+.border-usability-testing {
   border-color: $red;
 }
 
-.border-green-blue {
+.border-green-blue,
+.border-ui-ux-design {
   border-color: $green-blue;
 }
 
@@ -100,3 +136,25 @@ body {
   border-color: $grey;
 }
 
+
+/*Pagination Section*/
+.site-main {
+  .pagination_number span,
+  .pagination_number a {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    background: #eee;
+  }
+  .pagination_number a {
+    color: #45a9b7;
+  }
+  .pagination_number span {
+    color: #394240
+  }
+  .pagination_number a:hover {
+    text-decoration: none;
+    color: $orange
+  }
+}
+/*End Pagination Section*/

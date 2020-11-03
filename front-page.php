@@ -2,7 +2,13 @@
 
 <!-- Say Yes Page -->
 <article class="landing-page">
-  <h2 id="typed-header" class="text-white"><?php pl_e( 'Say Yes To ...' ) ?></h2>
+  <div id="typed-header-strings" class="text-white">
+    <p><?php pl_e( 'Say Yes To ...' ) ?></p>
+    <p><?php pl_e( 'Say Yes To Creative' ) ?></p>
+    <p><?php pl_e( 'Say Yes To Magnates' ) ?></p>
+    <p><?php pl_e( 'Say Yes To Yes User' ) ?></p>
+  </div>
+  <h2 id="typed" class="text-white"></h2>
   <div class="landing-page-sidebar">
     <div class="landing-sidebar-logo">
       <div class="logo-box bg-white">

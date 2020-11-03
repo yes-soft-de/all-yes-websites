@@ -111,10 +111,14 @@
 		return $output;
 	}
 
-
-	// Function To Create Pagination Number
-	function yes_user_pagination_number() {
-		global $wp_query; // Make WP_Query Global
+	// Pagination N
+	function yes_user_pagination_number($post_type = '') {
+		if ( $post_type != '' ) {
+			$args = array( 'post_type' => 'yes_user_project' );
+			$wp_query = new WP_Query( $args );
+		} else {
+			global $wp_query; // Make WP_Query Global
+		}
 		$all_page_number = $wp_query->max_num_pages; // Get All Posts
 		$current_page_number = max(1, get_query_var('paged')); // Get Current Page
 		// Check If There Is One Page Or More
@@ -128,7 +132,12 @@
 				'next_text'          => pll_('Next').' »'
 			) );
 		}
+		if ( $post_type != '' ) {
+			wp_reset_postdata();
+		}
 	}
+
+
 
 	// get most views posts
 	function wpb_set_post_views($postID) {

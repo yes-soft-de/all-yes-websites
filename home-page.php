@@ -3,60 +3,24 @@
 	get_header(); ?>
 
 <!--Start Service Section-->
-<article class="services">
-	<div class="container">
-		<div class="row">
-			<div class="col-12 col-sm-6 col-lg-4 mx-auto">
-				<div class="service-box border-bright-green">
-					<h4><?php pl_e( 'Branding & Graphic Design' ) ?></h4>
-					<p class="text-white"><?php pl_e('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, atque eaque est et harum id illum laborum minima numquam! A dolor error id obcaecati quam tenetur vel vero. Iure, iusto.') ?></p>
-				</div>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-4 mx-auto">
-				<div class="service-box border-bright-green">
-					<h4><?php pl_e( 'Branding & Graphic Design' ); ?></h4>
-					<p class="text-white"><?php pl_e('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, atque eaque est et harum id illum laborum minima numquam! A dolor error id obcaecati quam tenetur vel vero. Iure, iusto.') ?></p>
-				</div>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-4 mx-auto">
-				<div class="service-box border-green-blue">
-					<h4><?php pl_e('UI & UX Design'); ?></h4>
-					<p class="text-white"><?php pl_e('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, atque eaque est et harum id illum laborum minima numquam! A dolor error id obcaecati quam tenetur vel vero. Iure, iusto.') ?></p>
-				</div>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-4 mx-auto">
-				<div class="service-box border-bright-yellow">
-					<h4><?php pl_e('UX Studies'); ?></h4>
-					<p class="text-white"><?php pl_e('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, atque eaque est et harum id illum laborum minima numquam! A dolor error id obcaecati quam tenetur vel vero. Iure, iusto.') ?></p>
-				</div>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-4 mx-auto">
-				<div class="service-box border-grey-border">
-					<h4><?php pl_e('Digital Strategy'); ?></h4>
-					<p class="text-white"><?php pl_e('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, atque eaque est et harum id illum laborum minima numquam! A dolor error id obcaecati quam tenetur vel vero. Iure, iusto.') ?></p>
-				</div>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-4 mx-auto">
-				<div class="service-box border-red">
-					<h4><?php pl_e('Usability Testing'); ?></h4>
-					<p class="text-white"><?php pl_e('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, atque eaque est et harum id illum laborum minima numquam! A dolor error id obcaecati quam tenetur vel vero. Iure, iusto.') ?></p>
-				</div>
-			</div>
-			<div class="col-12 col-sm-5 mx-auto">
-				<div class="service-box border-orange">
-					<h4><?php pl_e('UI Review & Provide Solutions'); ?></h4>
-					<p class="text-white"><?php pl_e('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, atque eaque est et harum id illum laborum minima numquam! A dolor error id obcaecati quam tenetur vel vero. Iure, iusto.') ?></p>
-				</div>
-			</div>
-			<div class="col-12 col-sm-5 mx-auto">
-				<div class="service-box border-sky-blue">
-					<h4><?php pl_e('UX Review & Provide Solutions'); ?></h4>
-					<p class="text-white"><?php pl_e('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, atque eaque est et harum id illum laborum minima numquam! A dolor error id obcaecati quam tenetur vel vero. Iure, iusto.') ?></p>
-				</div>
-			</div>
-		</div>
-	</div>
-</article>
+<?php
+  $terms =	get_terms( 'yes_user_project_category', array( 'hide_empty' => 0 ));
+	if ( $terms ): ?>
+  <article class="services">
+    <div class="container">
+      <div class="row">
+        <?php foreach ( $terms as $term ): ?>
+          <div   class="col-12 col-sm-6 col-lg-4 mx-auto">
+            <div class="service-box mb-5 p-4 service-slide-box border-<?php echo esc_html( $term->slug ); ?>">
+              <h4><?php echo esc_html( $term->name ) ?></h4>
+              <p class="text-white"><?php echo esc_html( $term->description ); ?></p>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div><!--.row-->
+    </div>
+  </article>
+<?php endif; ?>
 <!--End Service Section-->
 
 <!--Yes User Company-->
@@ -90,7 +54,7 @@
 					<div class="card-body px-0">
 						<h4 class="card-title font-weight-bold"><?php pl_e('Support'); ?></h4>
 						<p class="card-text"><?php pl_e( 'Delivering faster and more personalized support with shared screens and cool design systems for Figma' ) ?></p>
-						<a href="#" class="card-button font-weight-bold"><?php pl_e('Learn more') ?></a>
+						<a href="#" class="card-button font-weight-bold py-2 px-3"><?php pl_e('Learn more') ?></a>
 					</div>
 				</div>
 			</div>
@@ -102,7 +66,7 @@
 					<div class="card-body px-0">
 						<h4 class="card-title font-weight-bold"><?php pl_e( 'Personal Studies' ) ?></h4>
 						<p class="card-text"><?php pl_e('Identify qualified customers with easy-to-use live chat messaging and Al-based Sales Bot') ?></p>
-						<a href="#" class="card-button font-weight-bold"><?php pl_e('Learn more');?></a>
+						<a href="#" class="card-button font-weight-bold py-2 px-3"><?php pl_e('Learn more');?></a>
 					</div>
 				</div>
 			</div>
@@ -114,7 +78,7 @@
 					<div class="card-body px-0">
 						<h4 class="card-title font-weight-bold"><?php pl_e( 'Coponents-driven' ) ?></h4>
 						<p class="card-text"><?php pl_e('Delivering faster and more personalized support with shared screens and cool design systems for Figma') ?></p>
-						<a href="#" class="card-button font-weight-bold"><?php pl_e('Learn more');?></a>
+						<a href="#" class="card-button font-weight-bold py-2 px-3"><?php pl_e('Learn more');?></a>
 					</div>
 				</div>
 			</div>
@@ -126,7 +90,7 @@
 					<div class="card-body px-0">
 						<h4 class="card-title font-weight-bold"><?php pl_e( 'All in one place' ) ?></h4>
 						<p class="card-text"><?php pl_e('You can toggle to any icon within instances and customize outlined stroke to more bolder or lighter') ?></p>
-						<a href="#" class="card-button font-weight-bold"><?php pl_e('Learn more');?></a>
+						<a href="#" class="card-button font-weight-bold py-2 px-3"><?php pl_e('Learn more');?></a>
 					</div>
 				</div>
 			</div>

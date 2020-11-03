@@ -13,6 +13,8 @@
 		// Enqueue Styles
 		wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css' );
 		wp_enqueue_style( 'font-awesome-css', get_template_directory_uri() . '/css/font-awesome.min.css' );
+		wp_enqueue_style( 'slick-css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css' );
+		wp_enqueue_style( 'slick-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css' );
 		wp_enqueue_style( 'style-css', get_template_directory_uri() . '/css/style.css' );
 
 		// Js Scripts
@@ -24,6 +26,7 @@
 		// add bootstrap to wordpress
 		wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), false, true );
 		wp_enqueue_script( 'typed-js', 'https://cdn.jsdelivr.net/npm/typed.js@2.0.11', array('jquery'), false, true );
+		wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), false, true );
 		// add our custom file to wordpress
 		wp_enqueue_script( 'custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery'), false, true );
 		// add condition for internet explorer 9 and less

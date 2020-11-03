@@ -5,6 +5,90 @@
 		=============================
 	*/
 
+	function yes_user_project_custom_post_type() {
+		// All Post Labels
+		$label = array(
+			'name'                => 'Projects',
+			'singular_name'       => 'Project',
+			'add_new'             => 'Add New',
+			'all_items'           => 'All Projects',
+			'add_new_item'        => 'Add New',
+			'new_item'            => 'New Project',
+			'view_item'           => 'View Project',
+			'search_items'         => 'Search Project',
+			'not_found'           => 'No Project Found',
+			'not_found_in_trash'  => 'Not Project Found In Trash',
+			'parent_item_colon'   => 'Parent Project'
+		);
+		$args = array(
+			'labels'              => $label,
+			'public'              => true,
+			'has_archive'         => true,
+			'publicly_queryable'  => true,
+			'query_var'           => true,
+			'rewrite'             => true,
+			'capability_type'     => 'post',
+			'menu_icon'           => 'dashicons-analytics',
+			'hierarchical'        => false,
+//		'taxonomies'          => array( 'category', 'post_tag' ),
+			'menu_position'       => 5,
+			'exclude_from_search' => false,
+			'supports' => array(
+				'title',
+				'editor',
+				'excerpt',
+				'thumbnail',
+				'revisions',
+				'comments'
+			)
+		);
+		register_post_type( 'yes_user_project', $args );
+	}
+	add_action( 'init', 'yes_user_project_custom_post_type' );
+
+
+	/*
+	 * Function To Add New Taxonomy Hierarchical And NOT Hierarchical
+	 */
+	function yes_user_project_custom_taxonomies() {
+
+		//add new taxonomy hierarchical
+		$labels = array(
+			'name' => 'Project Category',
+			'singular_name' => 'Project Category',
+			'search_items' => 'Search Project Categories',
+			'all_items' => 'Project Categories',
+			'parent_item' => 'Parent Project Category',
+			'parent_item_colon' => 'Parent Project Category:',
+			'edit_item' => 'Edit Project Category',
+			'update_item' => 'Update Project Category',
+			'add_new_item' => 'Add New Project Category',
+			'new_item_name' => 'New Project Category Name',
+			'menu_name' => 'Project Categories'
+		);
+
+		$args = array(
+			'labels' => $labels,
+			'hierarchical' => true,
+			'show_ui' => true,
+			'show_admin_column' => true,
+			'query_var' => true,
+			'rewrite' => array( 'slug' => 'yes_user_project_category' )
+		);
+
+		register_taxonomy('yes_user_project_category', array('yes_user_project'), $args);
+
+		//add new taxonomy NOT hierarchical
+
+		register_taxonomy('project_tag', 'yes_user_project', array(
+			'label' => 'Project Tag',
+			'rewrite' => array( 'slug' => 'project_tag' ),
+			'hierarchical' => false
+		) );
+	}
+	add_action( 'init' , 'yes_user_project_custom_taxonomies' );
+
+
 	/* Contact Custom Port Type */
 	function yes_user_contact_custom_post_type() {
 		$labels = array(

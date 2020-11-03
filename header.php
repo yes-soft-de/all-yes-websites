@@ -16,8 +16,9 @@
 <?php
   if ( !is_front_page() ): ?>
 
-  <nav class="navbar navbar-expand-lg navbar-desktop">
-
+  <nav class="navbar navbar-expand-lg navbar-desktop p-0">
+    <div class="nav-box position-relative w-100 p-3 pb-4">
+      <img class="img-responsive" src="<?php echo get_template_directory_uri() . '/images/icons/bg-nav.png' ?>" alt="header background">
       <div class="container">
         <div class="row">
           <div class="col-5 mx-auto align-self-center">
@@ -38,7 +39,9 @@
             <?php yes_user_display_left_menu(); ?>
           </div>
         <div class="col-2 mx-auto" style="display: grid">
-          <img class="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/FINAL-LOGO.png' ?>" alt="" title="Yes User Logo"  style="place-self: end;">
+          <div class="logo-bg bg-white">
+            <img class="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/FINAL-LOGO.png' ?>" alt="" title="Yes User Logo"  style="place-self: end;">
+          </div>
         </div>
           <div class="col-5 align-self-center justify-content-end">
             <?php yes_user_display_language_menu(); ?>
@@ -46,6 +49,6 @@
           </div>
         </div>
       </div>
-  <!--  </div>-->
+    </div>
   </nav>
 <?php endif; ?>

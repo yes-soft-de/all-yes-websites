@@ -1,20 +1,28 @@
 jQuery(document).ready( function( $ ) {
+
   var navBarDesktopHeight = $('.navbar-desktop').innerHeight();
 
   $('.services').find('.container').css('transform', 'translateY(' + (navBarDesktopHeight + 75) + 'px)');
-  $('#primary').css('padding-top', (navBarDesktopHeight + 25) + 'px');
+  $('#primary').css('padding-top', (navBarDesktopHeight + 50) + 'px');
 
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 80) {
-      // console.log(.css('background-color'));
-      $('.navbar-desktop').css('background-color', 'rgb(0 12 44)');
-    } else {
-      $('.navbar-desktop').css('background-color', 'transparent');
-    }
+  $('.our-work .service-box').hover( function () {
+    $(this).css('background', $(this).css('border-color') ).find('a').css('color', '#fff');
+  }, function () {
+    $(this).css('background', 'transparent').find('a').css('color', '#000');;
   });
 
+
+  // $(window).scroll(function () {
+  //   if ($(this).scrollTop() > 80) {
+  //     $('.navbar-desktop').css('background-color', 'rgb(0 12 44)');
+  //   } else {
+  //     $('.navbar-desktop').css('background-color', 'transparent');
+  //   }
+  // });
+
+
   // Show Service Content When Hover
-  $('.service-box').hover( function () {
+  $('.service-slide-box').hover( function () {
     $(this).find('h4').slideUp();
     $(this).find('p').slideDown();
   }, function () {
@@ -93,28 +101,39 @@ jQuery(document).ready( function( $ ) {
 
   // blog page add grid bootstrap classes
   $('#primary .blog-main .blog-posts .row').children().map(function (e, k) {
-      var childId = '#' + k.getAttribute('id');
-      if (e == 0) {
-        $(childId).addClass('col-12')
-          .find('.time-parent-box').addClass('col-6 col-md-4 text-right')
-          .siblings('.category-parent-box').addClass('col-6 col-md-8')
-          .find('.category-box').addClass('border-green-blue mb-2');
-      } else {
-        $(childId).addClass('col-6')
-          .find('.time-parent-box').addClass('col-12 mt-2')
-          .siblings('.category-parent-box').addClass('col-12')
-          .find('.category-box').addClass('border-bing mb-2');
-      }
-    });
+    var childId = '#' + k.getAttribute('id');
+    if (e == 0) {
+      $(childId).addClass('col-12')
+        .find('.time-parent-box').addClass('col-6 col-md-4 text-right')
+        .siblings('.category-parent-box').addClass('col-6 col-md-8')
+        .find('.category-box').addClass('border-green-blue mb-2');
+    } else {
+      $(childId).addClass('col-6')
+        .find('.time-parent-box').addClass('col-12 mt-2')
+        .siblings('.category-parent-box').addClass('col-12')
+        .find('.category-box').addClass('border-bing mb-2');
+    }
+  });
 
 
+  // Slick In Our Work Page
+  $('.our-work-filter-slick').slick({
+    dots: false,
+    arrows: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    centerMode: true,
+    variableWidth: true
+  });
 
-  var typed3 = new Typed('#typed-header', {
-    strings: ['Say Yes To: ...', 'Say Yes To: <i>Creative</i>', 'Say Yes To: <strong>Magnate</strong>', '', 'Say Yes To: Yes User'],
+
+  // Typed In Landing Page
+  var typed3 = new Typed('#typed', {
+    stringsElement: '#typed-header-strings',
+    // strings: ['Say Yes To: ...', 'Say Yes To: Creative', 'Say Yes To: Magnate', '', 'Say Yes To: Yes User'],
     typeSpeed: 50,
     backSpeed: 50,
-    // backDelay: 500,
-    // startDelay: 500,
     smartBackspace: true, // this is a default
     loop: true
   });
