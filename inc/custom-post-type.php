@@ -145,14 +145,14 @@
 	add_action( 'manage_yes-user-contact_posts_custom_column', 'yes_user_contact_custom_column', 10, 2 );
 
 	/**** Create Contact Meta Box ****/
-// Even If The Meta bax not related ot the custom post type but it related to the contact post type so we generate it in this file
+	// Even If The Meta bax not related ot the custom post type but it related to the contact post type so we generate it in this file
 	function yes_user_contact_add_meta_box() {
 		add_meta_box( 'contact_email', pll_('User Email'), 'yes_user_contact_email_callback', 'yes-user-contact', 'side', 'default' );
 	}
 	// action to activate my function and generate the meta box
 	add_action( 'add_meta_boxes', 'yes_user_contact_add_meta_box' );
 
-// $post: will automatically pass by add_meta_box and it will care all information related to 'yes_user-contact' post type
+	// $post: will automatically pass by add_meta_box and it will care all information related to 'yes_user-contact' post type
 	function yes_user_contact_email_callback( $post ) {
 		wp_nonce_field( 'yes_user_save_contact_email_data', 'yes_user_contact_email_meta_box_nonce' );
 		$value = get_post_meta( $post->ID, '_contact_email_value_key', true );
@@ -189,3 +189,63 @@
 	}
 	// action to save the post in our contact custom post
 	add_action( 'save_post', 'yes_user_save_contact_email_data' );
+
+
+
+
+	// Posts Relation with products
+	function yes_user_product_add_meta_boxes() {
+		add_meta_box( 'product_meta_box', pll_( 'Products Relationship' ), 'yes_user_products_callback', 'post', 'side', 'default' );
+	}
+	add_action( 'add_meta_boxes', 'yes_user_product_add_meta_boxes' );
+
+
+	function yes_user_products_callback( $post ) {
+		$selected_products = get_post_meta( $post->ID, '_products_value_key', true );
+		$all_products = get_posts( array(
+			'post_type' => 'yes_user_project',
+			'numberposts' => -1,
+			'orderby' => 'post_title',
+			'order' => 'ASC'
+		) );
+
+		echo '<input type="hidden" name="products_nonce" value="'. wp_create_nonce( basename( __FILE__ ) ) . '" />
+				<table class="form-table">
+					<tr valign="top">
+						<td scope="row">
+							<label for="products">' . pll_('Products') . '</label>
+						</td>
+						<td>
+							<select multiple name="products" size="4" style="width: 100%">';
+								foreach ( $all_products as $product ) :
+									echo '<option value="'. $product->ID .'"'. (in_array( $product->ID, $selected_products ) ? ' selected="selected"' : '') . '>'. esc_html($product->post_title) .'</option>';
+								endforeach;
+							echo '</select>
+						</td>
+					</tr>
+				</table>';
+	}
+
+	add_action( 'save_post', 'yes_user_save_product_field' );
+	function yes_user_save_product_field( $post_id ) {
+
+		// only run this for series
+		if ( 'post' != get_post_type( $post_id ) )
+			return $post_id;
+
+		// verify nonce
+		if ( empty( $_POST['products_nonce'] ) || !wp_verify_nonce( $_POST['products_nonce'], basename( __FILE__ ) ) )
+			return $post_id;
+
+		// check autosave
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+			return $post_id;
+
+		// check permissions
+		if ( !current_user_can( 'edit_post', $post_id ) )
+			return $post_id;
+
+		// Retrieve the data
+		$my_data = sanitize_text_field( $_POST['products'] );
+		update_post_meta( $post_id, '_products_value_key', $my_data );
+	}

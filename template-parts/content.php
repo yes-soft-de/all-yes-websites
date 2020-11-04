@@ -11,8 +11,8 @@
     <img class="img-fluid" src="<?php echo yes_user_get_thumbnail(); ?>" alt="post thumbnail">
   </header>
   <div class="entry-content bg-white p-3">
-    <?php the_title( '<h2 class="">', '</h2>' ); ?>
-    <div class="row align-items-center">
+    <?php the_title( '<h2 class="entry-title"><a href="' . get_the_permalink() . '">', '</a></h2>' ); ?>
+    <div class="row align-items-center mt-3">
       <div class="category-parent-box">
 	      <?php echo yes_user_get_categories(); ?>
       </div>

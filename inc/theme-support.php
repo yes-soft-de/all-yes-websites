@@ -156,7 +156,7 @@
 	remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
 
-
+	// Get Template Name
 	function yes_user_get_template_name( $page_id = null ) {
 		if ( ! $template = get_page_template_slug( $page_id ) )
 			return;
@@ -172,3 +172,4 @@
 
 		return $data['Name'];
 	}
+

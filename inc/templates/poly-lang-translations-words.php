@@ -20,5 +20,9 @@ $translationWords = array(
 	// Blog
 	'Best Read', 'Yes user newsletter',
 	// Say Yes Landing Page
-	'Home', 'Contact Us',
+	'Home', 'Contact Us', 'Products',
+	// Products
+	'Products Relationship', 'Products',
+	// Comments
+	'Comment', 'One Comment', 'Comments', 'disabled Comment',
 );
