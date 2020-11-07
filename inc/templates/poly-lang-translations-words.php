@@ -25,4 +25,6 @@ $translationWords = array(
 	'Products Relationship', 'Products',
 	// Comments
 	'Comment', 'One Comment', 'Comments', 'disabled Comment',
+	// Our Services Page
+	'Related Project',
 );

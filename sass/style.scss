@@ -312,6 +312,25 @@ article.our-projects {
 }
 
 
+
+/*
+   Services Page
+  -----------------------------------------
+*/
+.services-page {
+  .service-tax-content {
+    .service-content-img {
+      width: 25%;
+    }
+    p {
+      font-size: 1.4rem;
+      line-height: 1.7;
+    }
+  }
+}
+
+
+
 /*
    Single Post
   -----------------------------------------
@@ -623,9 +642,4 @@ footer {
   }
   .js-show-feedback { display: block; }
 }
-
-
-
-
-
 

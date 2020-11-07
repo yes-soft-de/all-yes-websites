@@ -76,7 +76,7 @@
 			'rewrite' => array( 'slug' => 'yes_user_project_category' )
 		);
 
-		register_taxonomy('yes_user_project_category', array('yes_user_project'), $args);
+		register_taxonomy('yes_user_project_category', 'yes_user_project', $args);
 
 		//add new taxonomy NOT hierarchical
 
