@@ -14,7 +14,7 @@
 								<?php edit_post_link('Edit <i class="fa fa-pencil fa-fw"></i>'); ?>
 							<?php endif; ?>
 		          <h2 class="single-post-header m-0">
-			          <?php the_title('<h2>', '</h2>'); ?>
+		            <?php the_title('<h2>', '</h2>'); ?>
 		          </h2>
 		          <div class="single-post-detail my-2">
 		                    <span class="post-auther mr-3">

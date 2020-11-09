@@ -114,7 +114,7 @@
 	// Pagination N
 	function yes_user_pagination_number($post_type = '') {
 		if ( $post_type != '' ) {
-			$args = array( 'post_type' => 'yes_user_project' );
+			$args = array( 'post_type' => $post_type );
 			$wp_query = new WP_Query( $args );
 		} else {
 			global $wp_query; // Make WP_Query Global

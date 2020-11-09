@@ -20,11 +20,11 @@ $translationWords = array(
 	// Blog
 	'Best Read', 'Yes user newsletter',
 	// Say Yes Landing Page
-	'Home', 'Contact Us', 'Products',
+	'Say Yes To ...', 'Say Yes To Perfection', 'Say Yes To Creativity,', 'Say Yes To High Professionalism,', 'Say Yes To Excellent User Experience,', 'and Technology.', 'Say Yes To Yes User Company', 'Home', 'Contact Us', 'Products',
 	// Products
 	'Products Relationship', 'Products',
 	// Comments
 	'Comment', 'One Comment', 'Comments', 'disabled Comment',
 	// Our Services Page
-	'Related Project',
+	'Related Project', 'Whatsapp'
 );

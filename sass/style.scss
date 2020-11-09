@@ -12,6 +12,13 @@
   --------------------------------
 */
 .navbar {
+  .navbar-nav {
+    @media (min-width: 768px) {
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+    }
+  }
   &.navbar-desktop {
     position: fixed;
     top: 0;
@@ -30,16 +37,55 @@
     .logo-bg {
       height: 70%;
       place-self: end;
+      @media (min-width: 768px) and (max-width: 991px) {
+        height: 45%;
+      }
+    }
+    .nav-link i {
+      color: $white;
     }
   }
-  .facebook-icon { width: 28px; }
-  .linkedin-icon { width: 38px; }
-  .slack-icon { width: 47px; }
-  .twitter-icon { width: 40px; }
-  .facebook-icon:hover,
-  .linkedin-icon:hover,
-  .slack-icon:hover,
-  .twitter-icon:hover { opacity: .7 }
+  &.navbar-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+    .nav-box {
+      & > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+    .nav-item {
+      &.active {
+        .nav-link { color: $green; }
+      }
+      .nav-link { color: $white; }
+      &:last-child {
+        margin-bottom: 1rem;
+      }
+    }
+    .navbar-nav.custom-navbar-social {
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      .nav-item:last-child {
+        margin-bottom: 0;
+      }
+    }
+    .logo-bg { width: 25%; }
+  }
+  .facebook-icon:hover i,
+  .linkedin-icon:hover i,
+  .slack-icon:hover i,
+  .twitter-icon:hover i {
+    @include animate( all, .3s );
+    color: $green;
+  }
 
   #menu-header-menu {
     li.nav-item:first-child { margin-left: 0; }
@@ -51,13 +97,19 @@
 
   #menu-yes-user-language-menu li.nav-item {
     font-size: 1.4rem;
-    a { color: #fff; }
+    a { color: $white; }
+    @media (min-width: 768px) and (max-width: 991px) {
+      font-size: 1.2rem;
+    }
   }
 
   #menu-header-menu li.nav-item,
   #menu-yes-user-right-menu li.nav-item {
     font-size: 1.5rem; margin: 0 auto; position: relative;
-    a { color: #fff; }
+    a { color: $white; }
+    @media (min-width: 768px) and (max-width: 991px) {
+      font-size: 1.2rem;
+    }
   }
 
   #menu-yes-user-language-menu li.nav-item:hover a,
@@ -82,8 +134,8 @@
   @include backgroundSize(cover);
   position: relative;
   & > h2 {
-    font-size: 4rem;
-    padding-left: 7%;
+    font-size: 3.5rem;
+    padding-left: 5%;
   }
   .landing-page-sidebar {
     position: absolute;
@@ -114,12 +166,12 @@
       }
     }
     .sidebar-navigate-contact {
-      border: 4px solid #fff;
+      border: 4px solid $white;
       border-radius: 20px;
       padding-top: .8rem;
       padding-bottom: .8rem;
     }
-    a { color: #fff ; text-decoration: none; @include animate(all, .5s);
+    a { color: $white ; text-decoration: none; @include animate(all, .5s);
       &:hover { color: #aaa; }
     }
   }
@@ -138,15 +190,28 @@ article.services {
   @include backgroundSize(cover);
   height: 120vh;
   padding: 0;
-  color: #fff;
+  color: $white;
   text-align: center;
+  @media (max-width: 575px) {
+    height: 130vh;
+  }
   .service-box {
+    h4 {
+      @media (max-width: 575px) {
+        font-size: 1.1rem;
+      }
+    }
     p { display: none; }
   }
 }
 article.yes-user-company {
   span { font-size: 1rem; }
-  .yes-user-desc { font-size: 1.8rem; }
+  .yes-user-desc { font-size: 1.8rem;
+    @media (min-width: 768px) and (max-width: 991px) {
+      font-size: 1.5rem;
+      word-break: break-all;
+    }
+  }
 }
 article.deliver-service {
   .col-12.col-sm-6:not(:first-child) { padding-left: 0; }
@@ -159,21 +224,31 @@ article.our-team {
   .col-12.col-sm-6:nth-child(2) {
     border-width: 3px;
     border-style: solid;
-    -webkit-border-image: -webkit-linear-gradient( to bottom, $sky-blue, #fff ) 0 100%;
-    -moz-border-image: -moz-linear-gradient( to bottom, $sky-blue, #fff ) 0 100%;
-    -o-border-image: -o-linear-gradient( to bottom, $sky-blue, #fff ) 0 100%;
-    -ms-border-image: -ms-linear-gradient( to bottom, $sky-blue, #fff ) 0 100%;
-    border-image: linear-gradient( to bottom, $sky-blue, #fff ) 0 100%;
+    -webkit-border-image: -webkit-linear-gradient( to bottom, $sky-blue, $white ) 0 100%;
+    -moz-border-image: -moz-linear-gradient( to bottom, $sky-blue, $white ) 0 100%;
+    -o-border-image: -o-linear-gradient( to bottom, $sky-blue, $white ) 0 100%;
+    -ms-border-image: -ms-linear-gradient( to bottom, $sky-blue, $white ) 0 100%;
+    border-image: linear-gradient( to bottom, $sky-blue, $white ) 0 100%;
   }
   .team-item {
     .team-member-image {
       width: 200px;
       height: 200px;
-      background: linear-gradient( to bottom, #fff, $sea-blue);
+      background: linear-gradient( to bottom, $white, $sea-blue);
       padding: 5px;
       border-radius: 50%;
     }
-    h2 { color: $sea-blue; font-weight: 400; }
+    h2 { color: $sea-blue; font-weight: 400;
+      @media (min-width: 768px) and (max-width: 991px) {
+        font-size: 1.7rem;
+        margin-top: 1rem;
+      }
+    }
+    h4 {
+      @media (min-width: 768px) and (max-width: 991px) {
+        font-size: 1.3rem;
+      }
+    }
   }
 }
 article.our-projects {
@@ -188,7 +263,11 @@ article.our-projects {
       width: fit-content;
       padding: 10px 15px;
     }
-    p { font-size: 1.9rem; font-weight: 400; }
+    p { font-size: 1.9rem; font-weight: 400;
+      @media (min-width: 768px) and (max-width: 991px) {
+        font-size: 1.6rem;
+      }
+    }
   }
 }
 
@@ -223,11 +302,11 @@ article.our-projects {
         }
         &:hover .category-box.border-green-blue {
           background: $green-blue;
-          color: #fff;
+          color: $white;
         }
         &:hover .category-box.border-bing {
           background: $bing;
-          color: #fff;
+          color: $white;
         }
       }
     }
@@ -250,7 +329,7 @@ article.our-projects {
           input[type="submit"] {
             width: 30%;
             padding: 1.5rem;
-            color: #fff;
+            color: $white;
             background-color: $sea-blue;
             border-bottom: 1px solid #002e74;
             outline: none;
@@ -318,13 +397,40 @@ article.our-projects {
   -----------------------------------------
 */
 .services-page {
+  article { padding-top: 0; padding-bottom: 20px; }
   .service-tax-content {
     .service-content-img {
       width: 25%;
     }
+    .whatsapp-contact {
+      padding: .4rem 1rem;
+      background: $bright-green;
+      color: $white;
+      margin: auto;
+      display: inline-block;
+      cursor: pointer;
+      &:hover {
+        background: $green;
+        color: $white;
+      }
+    }
     p {
       font-size: 1.4rem;
       line-height: 1.7;
+      text-align: justify;
+    }
+  }
+  .sidebar-best-read-blog {
+    h4 {
+      a { color: #000; text-decoration: none;
+        &:hover { color: $sea-blue; }
+      }
+    }
+  }
+  .service-project-blog {
+    img { width: 100%; }
+    .entry-content .card-button {
+      margin-left: 6%;
     }
   }
 }
@@ -385,7 +491,7 @@ article.our-projects {
   .random-post .post-author-title {
     background: #45a9b7;
     padding: 5px 10px;
-    color: #fff;
+    color: $white;
     border-radius: 5px
   }
   .random-post .post-author-random-posts {
@@ -394,7 +500,7 @@ article.our-projects {
     border-radius: 5px
   }
   .author-box {
-    background-color: #fff;
+    background-color: $white;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -451,7 +557,7 @@ h4.comment-number {
   padding: 0;
 }
 .comments-list .comment img {
-  background-color: #fff;
+  background-color: $white;
   border: 1px solid #eee;
   padding: 2px;
 }
@@ -471,7 +577,7 @@ h4.comment-number {
   font-size: 14px;
 }
 .comments-list > .comment { /*Level One For Directe Child*/
-  background-color: #fff;
+  background-color: $white;
   padding: 10px;
   margin-top: 10px;
   border: 1px solid #ccc;
@@ -502,7 +608,7 @@ h4.comment-number {
 }
 .comment-respond {
   width: 100%;
-  background: #fff;
+  background: $white;
   border: 1px solid #ccc;
   padding: 15px 20px;
 }
@@ -551,7 +657,7 @@ h4.comment-number {
 }
 .comment-respond input[type="submit"] {
   background-color: #007bff;
-  color: #fff;
+  color: $white;
   margin-top: 10px;
 }
 @media (max-width: 767px) {
@@ -573,6 +679,7 @@ footer {
   h6 { text-transform: uppercase; color: $grey; letter-spacing: .1rem; }
   .social-icon {
     display: block;
+    color: $sea-blue;
   }
   .facebook-icon { width: 13px; }
   .linkedin-icon { width: 23px; }
@@ -581,7 +688,14 @@ footer {
   .facebook-icon:hover,
   .linkedin-icon:hover,
   .slack-icon:hover,
-  .twitter-icon:hover { background-color: $green; border-radius: 50%; }
+  .twitter-icon:hover {
+    @include animate( all, .3s );
+    width: fit-content;
+    padding: .2rem;
+    background: $green;
+    color: $white;
+    border-radius: 50%;
+  }
 
   .footer-nav-item {
     color: #222;
@@ -607,7 +721,7 @@ footer {
       width: 100%;
       height: 100%;
       background-color: $sea-blue;
-      color: #fff;
+      color: $white;
       text-transform: uppercase;
       cursor: pointer;
     }

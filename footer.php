@@ -13,16 +13,32 @@
                 <h6><?php pl_e( 'follow us') ?></h6>
                 <div class="row col-10 mb-5">
                   <div class="col pr-0">
-                    <a class="social-icon facebook-icon" href="#"><img class="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/Facebook-1.png' ?>"></a>
+                    <a class="social-icon facebook-icon" href="#">
+                      <i class="fa fa-facebook fa-fw fa-lg"></i>
+<!--                      <img class="img-fluid regular_image" src="--><?php //echo get_template_directory_uri() . '/images/icons/Facebook-1.png' ?><!--">-->
+<!--                      <img class="img-fluid hover_image d-none" src="--><?php //echo get_template_directory_uri() . '/images/icons/hover-icons/Facebook.png' ?><!--">-->
+                    </a>
                   </div>
                   <div class="col px-0">
-                    <a class="social-icon linkedin-icon" href="#"><img class="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/icon-linkedin-1.png' ?>"></a>
+                    <a class="social-icon linkedin-icon" href="#">
+                      <i class="fa fa-linkedin fa-fw fa-lg"></i>
+<!--                      <img class="img-fluid regular_image" src="--><?php //echo get_template_directory_uri() . '/images/icons/icon-linkedin-1.png' ?><!--">-->
+<!--                      <img class="img-fluid hover_image d-none" src="--><?php //echo get_template_directory_uri() . '/images/icons/hover-icons/icon-linkedin.png' ?><!--">-->
+                    </a>
                   </div>
                   <div class="col px-0">
-                    <a class="social-icon slack-icon" href="#"><img class="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/icon-slack-1.png' ?>"></a>
+                    <a class="social-icon slack-icon" href="#">
+                      <i class="fa fa-slack fa-fw fa-lg"></i>
+<!--                      <img class="img-fluid regular_image" src="--><?php //echo get_template_directory_uri() . '/images/icons/icon-slack-1.png' ?><!--">-->
+<!--                      <img class="img-fluid hover_image d-none" src="--><?php //echo get_template_directory_uri() . '/images/icons/hover-icons/icon-slack.png' ?><!--">-->
+                    </a>
                   </div>
                   <div class="col px-0">
-                    <a class="social-icon twitter-icon" href="#"><img clsass="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/icon-twitter-1.png' ?>"></a>
+                    <a class="social-icon twitter-icon" href="#">
+                      <i class="fa fa-twitter fa-fw fa-lg"></i>
+<!--                      <img class="img-fluid regular_image" src="--><?php //echo get_template_directory_uri() . '/images/icons/icon-twitter-1.png' ?><!--">-->
+<!--                      <img class="img-fluid hover_image d-none" src="--><?php //echo get_template_directory_uri() . '/images/icons/hover-icons/icon-twitter.png' ?><!--">-->
+                    </a>
                   </div>
                 </div>
                 <h6 class="my-3"><?php pl_e( 'information' ) ?></h6>

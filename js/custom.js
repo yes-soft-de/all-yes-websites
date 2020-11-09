@@ -1,9 +1,12 @@
 jQuery(document).ready( function( $ ) {
 
-  var navBarDesktopHeight = $('.navbar-desktop').innerHeight();
+  var navBarDesktopHeight = $('.navbar-desktop').innerHeight(),
+      navBarMobileHeight = $('.navbar-mobile').innerHeight();
 
   $('.services').find('.container').css('transform', 'translateY(' + (navBarDesktopHeight + 75) + 'px)');
+  $('.services').find('.container').css('transform', 'translateY(' + (navBarMobileHeight + 40) + 'px)');
   $('#primary').css('padding-top', (navBarDesktopHeight + 50) + 'px');
+  $('#primary').css('padding-top', (navBarMobileHeight + 25) + 'px');
 
   $('.our-work .service-box').hover( function () {
     $(this).css('background', $(this).css('border-color') ).find('a').css('color', '#fff');
@@ -29,6 +32,16 @@ jQuery(document).ready( function( $ ) {
     $(this).find('h4').slideDown();
     $(this).find('p').slideUp();
   });
+
+
+  // Social Media Icons Hover
+  // $('.social-icon').hover(function () {
+  //   $(this).find('.regular_image').addClass('d-none');
+  //   $(this).find('.hover_image').removeClass('d-none');
+  // }, function () {
+  //   $(this).find('.regular_image').removeClass('d-none');
+  //   $(this).find('.hover_image').addClass('d-none');
+  // });
 
 
   /* Contact From Submission */

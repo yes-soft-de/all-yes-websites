@@ -32,8 +32,8 @@ body {
     display: inline-block;
     top: 17%;
     right: 0;
-    width: 55vw;
-    height: 105vh;
+    width: 50vw;
+    height: 110vh;
     background: url("../images/icons/blog-background.png") center center no-repeat;
     @include backgroundSize(cover);
     z-index: -1;
