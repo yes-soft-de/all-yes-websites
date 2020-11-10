@@ -33,7 +33,7 @@
 
           <div class="sidebar-best-read-blog mb-3">
               <div class="row">
-                <div class="col-4" style="place-self: center;">
+                <div class="col-4 pr-0" style="place-self: center;">
                   <a href="<?php the_permalink(); ?>">
                     <img class="img-fluid" src="<?php echo yes_user_get_thumbnail(); ?>" alt="post thumbnail">
                   </a>

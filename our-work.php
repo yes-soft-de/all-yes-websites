@@ -9,7 +9,7 @@
 <div id="primary" class="content-area">
 	<main id="main" class="site-main our-work background-canvas">
 		<?php if ( $terms ): ?>
-			<div class="our-work-filter my-4">
+			<div class="our-work-filter mt-4 my-lg-0">
 				<div class="row w-100">
 					<div class="col-11 our-work-filter-slick">
 	          <?php foreach ( $terms as $term ): ?>
@@ -48,7 +48,7 @@
 				?>
 				<div class="col-12">
 					<!--Start Pagination Section-->
-					<div class="pagination_number text-center mb-4 mt-5">
+					<div class="pagination_number text-center mb-4">
 						<?php echo yes_user_pagination_number( 'yes_user_project' ); ?>
 					</div>
 					<!--End Pagination Section-->

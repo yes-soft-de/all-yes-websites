@@ -10,8 +10,8 @@
 	<main id="main" class="site-main blog-main background-canvas" role="main">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="d-none d-md-block col-md-4">
-						<?php get_sidebar(); ?>
+				<div class="d-none d-md-block col-md-4 first-side">
+          <?php include('sidebar.php'); ?>
 				</div>
 				<div class="col-12 col-md-8 blog-posts">
 					<div class="row">
@@ -25,12 +25,12 @@
 	          ?>
 					</div><!--.row-->
 				</div><!--.col-12-->
-				<div class="col-12 d-md-none">
-					<?php get_sidebar(); ?>
-				</div>
+				<div class="col-12 col-sm-10 mx-auto d-md-none second-side">
+					<?php include('sidebar.php'); ?>
+        </div>
         <div class="col-12">
           <!--Start Pagination Section-->
-          <div class="pagination_number text-center mb-4 mt-5">
+          <div class="pagination_number text-center mt-3">
 		        <?php echo yes_user_pagination_number(); ?>
           </div>
           <!--End Pagination Section-->

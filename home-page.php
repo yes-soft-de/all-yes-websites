@@ -46,7 +46,7 @@
 		<h2 class="font-weight-bold mb-3"><?php pl_e( 'Delivering best services in UI and UX field' ) ?></h2>
 		<p class="mb-5"><?php pl_e( 'We\'re the first multi-purpose design kit solutions for businesses. We help help your bridge gaps between your layouts, templates and developers to empower all involved' ) ?></p>
 		<div class="row">
-			<div class="col-12 col-sm-6 col-lg-3 mx-auto text-md-center text-lg-left">
+			<div class="col-12 col-sm-6 col-lg-3 mx-auto text-center text-lg-left">
 				<div class="card border-0">
 					<div class="card-image">
 						<img class="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/phone-icon.png' ?>" alt="best service icon">
@@ -58,7 +58,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-12 col-sm-6 col-lg-3 mx-auto text-md-center text-lg-left">
+			<div class="col-12 col-sm-6 col-lg-3 mx-auto text-center text-lg-left">
 				<div class="card border-0">
 					<div class="card-image">
 						<img class="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/analyze.png' ?>" alt="best service icon">
@@ -70,7 +70,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-12 col-sm-6 col-lg-3 mx-auto text-md-center text-lg-left">
+			<div class="col-12 col-sm-6 col-lg-3 mx-auto text-center text-lg-left">
 				<div class="card border-0">
 					<div class="card-image">
 						<img class="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/electric.png' ?>" alt="best service icon">
@@ -82,7 +82,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-12 col-sm-6 col-lg-3 mx-auto text-md-center text-lg-left">
+			<div class="col-12 col-sm-6 col-lg-3 mx-auto text-center text-lg-left">
 				<div class="card border-0">
 					<div class="card-image">
 						<img class="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/like.png' ?>" alt="best service icon">
@@ -103,7 +103,7 @@
 <article class="our-team">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-12 col-sm-6 col-md-4 mb-3">
+			<div class="col-12 col-sm-6 col-md-4 mb-4 mx-auto">
 				<div class="team-item">
 					<div class="row w-100">
 						<div class="col">
@@ -111,14 +111,14 @@
 								<img class="img-responsive rounded-circle" src="<?php echo get_template_directory_uri() . '/images/team/photo-1.jpg' ?>" alt="team member image">
 							</div>
 						</div>
-						<div class="col px-xl-0 text-center text-xl-left" style="place-self: center">
+						<div class="col px-xl-0 text-sm-center text-xl-left" style="place-self: center">
 							<h2 class="h1"><?php pl_e( 'Salma arar' ); ?></h2>
 							<h4 class="font-weight-bold"><?php pl_e( 'Graphic Design' ) ?></h4>
 						</div>
 					</div>
 				</div><!--.team-item-->
 			</div>
-			<div class="col-12 col-sm-6 col-md-4 mb-3">
+			<div class="col-12 col-sm-6 col-md-4 mb-4 mx-auto">
 				<div class="team-item">
 					<div class="row w-100">
 						<div class="col">
@@ -126,14 +126,14 @@
 								<img class="img-responsive rounded-circle" src="<?php echo get_template_directory_uri() . '/images/team/photo-2.jpg' ?>" alt="team member image">
 							</div>
 						</div>
-						<div class="col px-xl-0 text-center text-xl-left" style="place-self: center">
+						<div class="col px-xl-0 text-sm-center text-xl-left" style="place-self: center">
 							<h2 class="h1"><?php pl_e( 'Maks Lop' ); ?></h2>
 							<h4 class="font-weight-bold"><?php pl_e( 'Graphic Design' ) ?></h4>
 						</div>
 					</div>
 				</div><!--.team-item-->
 			</div>
-			<div class="col-12 col-sm-6 col-md-4 mb-3">
+			<div class="col-12 col-sm-6 col-md-4 mb-4 mx-auto">
 				<div class="team-item">
 					<div class="row w-100">
 						<div class="col">
@@ -141,7 +141,7 @@
 								<img class="img-responsive rounded-circle" src="<?php echo get_template_directory_uri() . '/images/team/photo-3.jpg' ?>" alt="team member image">
 							</div>
 						</div>
-						<div class="col px-xl-0 text-center text-xl-left" style="place-self: center">
+						<div class="col px-xl-0 text-sm-center text-xl-left" style="place-self: center">
 							<h2 class="h1"><?php pl_e( 'Mikel Smeth' ); ?></h2>
 							<h4 class="font-weight-bold"><?php pl_e( 'Graphic Design' ) ?></h4>
 						</div>
@@ -166,14 +166,14 @@
 					<h5 class="border-bing"><?php pl_e( 'Ux Counseling' ) ?></h5>
 					<p class="lead">Alex is passionate digital product designer with over 10 years of UI/UX experience. He has worked together with both boutique design ...</p>
 				</div>
-				<div class="col-12 col-sm-5 col-md-4 col-lg-3 align-self-md-center align-self-lg-start">
+				<div class="col-12 col-sm-5 col-md-4 col-lg-3 align-self-sm-center align-self-lg-start">
 					<img class="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/tab.png' ?>" alt="browser tab">
 				</div>
 			</div>
 		</div><!--.project-content-->
 		<div class="project-content">
 			<div class="row">
-				<div class="col-12 col-sm-5 col-md-4 col-lg-3 align-self-md-center align-self-lg-start">
+				<div class="col-12 col-sm-5 col-md-4 col-lg-3 align-self-sm-center align-self-lg-start mb-3">
 					<img class="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/lamp.jpg' ?>" alt="browser tab">
 				</div>
 				<div class="d-none d-md-block col-md-2 px-0 text-center" style="place-self: center;">

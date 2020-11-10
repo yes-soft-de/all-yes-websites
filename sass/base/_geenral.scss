@@ -35,8 +35,18 @@ body {
     width: 50vw;
     height: 110vh;
     background: url("../images/icons/blog-background.png") center center no-repeat;
-    @include backgroundSize(cover);
+    @include backgroundSize(contain);
     z-index: -1;
+    @media (min-width: 576px) and (max-width: 767px) {
+      top: 10%;
+      right: 0;
+      width: 75vw;
+    }
+    @media (max-width: 575px) {
+      top: 0;
+      right: 0;
+      width: 90vw;
+    }
   }
 }
 
