@@ -10,7 +10,7 @@
 	<main id="main" class="site-main services-page background-canvas">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-3 mx-auto">
+				<div class="col-4 col-lg-3 mx-auto">
 					<ul class="list-unstyled">
 							<?php foreach ( $terms as $term ):
 								$style = ($term->slug == $request_uri[2] ? 'style="transform: translateX(30px);"' : ''); ?>

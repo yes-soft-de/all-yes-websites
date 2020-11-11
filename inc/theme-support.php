@@ -173,3 +173,18 @@
 		return $data['Name'];
 	}
 
+ //  Function To Get The Custom Taxonomies For Our Custom Post Type
+	function yes_user_get_terms( $postID, $term ) {
+		$terms_list = wp_get_post_terms( $postID, $term );
+//		var_dump($terms_list);
+		$output = '';
+		$i = 0;
+		foreach ( $terms_list as $item ) {
+			$i++;
+			if ( $i > 1 ) { $output .= ', '; }
+//			$output .= '<a href="' . get_term_link( $item ) . '">'. $item->name .'</a>';
+			$output .= '<h5 class="border-' . $item->slug . '"><a href="' . get_term_link( $item ) . '">'. $item->name .'</a></h5>';
+		}
+		return $output;
+	}
+

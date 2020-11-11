@@ -156,36 +156,52 @@
 <!--Our Projects-->
 <article class="our-projects">
 	<div class="container">
-		<div class="project-content">
-			<div class="row">
-				<div class="d-none d-md-block col-md-2" style="place-self: center;">
-					<img class="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/Header-Left.png' ?>" alt="arrow">
-				</div>
-				<div class="col-12 col-sm-7 col-md-6 col-lg-7">
-					<h3 class="h2 font-weight-bold">Project Name</h3>
-					<h5 class="border-bing"><?php pl_e( 'Ux Counseling' ) ?></h5>
-					<p class="lead">Alex is passionate digital product designer with over 10 years of UI/UX experience. He has worked together with both boutique design ...</p>
-				</div>
-				<div class="col-12 col-sm-5 col-md-4 col-lg-3 align-self-sm-center align-self-lg-start">
-					<img class="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/tab.png' ?>" alt="browser tab">
-				</div>
-			</div>
-		</div><!--.project-content-->
-		<div class="project-content">
-			<div class="row">
-				<div class="col-12 col-sm-5 col-md-4 col-lg-3 align-self-sm-center align-self-lg-start mb-3">
-					<img class="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/lamp.jpg' ?>" alt="browser tab">
-				</div>
-				<div class="d-none d-md-block col-md-2 px-0 text-center" style="place-self: center;">
-					<img class="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/Header-Left.png' ?>" alt="arrow">
-				</div>
-				<div class="col-12 col-sm-7 col-md-6 col-lg-7">
-					<h3 class="h2 font-weight-bold">Project Name</h3>
-					<h5 class="border-green-blue" data-test="testString"><?php pl_e( 'UI & UX Design') ?></h5>
-					<p class="lead">Alex is passionate digital product designer with over 10 years of UI/UX experience. He has worked together with both boutique design ...</p>
-				</div>
-			</div>
-		</div><!--.project-content-->
+    <?php
+	    $args = array(
+		    'post_type' => 'yes_user_project',
+		    'posts_per_page' => 2
+	    );
+	    $query = new WP_Query( $args );
+	    if ( $query->have_posts() ):
+		    while ( $query->have_posts() ):
+			    $query->the_post(); ?>
+
+	    		<div id="project_content_<?php the_ID(); ?>" class="project-content">
+            <div class="row">
+              <div class="col-12 col-sm-5 col-md-4 col-lg-3 align-self-sm-center align-self-lg-start mb-3 first_image">
+                <img class="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/lamp.jpg' ?>" alt="browser tab">
+              </div>
+              <div class="d-none d-md-block col-md-2 arrow_image px-0 text-center" style="place-self: center;">
+                <img class="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/Header-Left.png' ?>" alt="arrow">
+              </div>
+              <div class="col-12 col-sm-7 col-md-6 col-lg-7">
+                <?php the_title( '<h3 class="h2 font-weight-bold">', '</h3>') ?>
+                <?php echo yes_user_get_terms( $post->ID, 'yes_user_project_category' ); ?>
+                <p class="lead"><?php echo get_the_excerpt(); ?></p>
+              </div>
+              <div class="col-12 col-sm-5 col-md-4 col-lg-3 align-self-sm-center align-self-lg-start second_image">
+                <img class="img-fluid" src="<?php echo yes_user_get_thumbnail() ?>" alt="browser tab">
+              </div>
+            </div>
+          </div><!--.project-content-->
+
+		    <?php endwhile; endif; wp_reset_postdata(); ?>
+
+<!--      <div class="project-content">-->
+<!--        <div class="row">-->
+<!--          <div class="col-12 col-sm-5 col-md-4 col-lg-3 align-self-sm-center align-self-lg-start mb-3">-->
+<!--            <img class="img-fluid" src="--><?php //echo get_template_directory_uri() . '/images/icons/lamp.jpg' ?><!--" alt="browser tab">-->
+<!--          </div>-->
+<!--          <div class="d-none d-md-block col-md-2 px-0 text-center" style="place-self: center;">-->
+<!--            <img class="img-fluid" src="--><?php //echo get_template_directory_uri() . '/images/icons/Header-Left.png' ?><!--" alt="arrow">-->
+<!--          </div>-->
+<!--          <div class="col-12 col-sm-7 col-md-6 col-lg-7">-->
+<!--            <h3 class="h2 font-weight-bold">Project Name</h3>-->
+<!--            <h5 class="border-green-blue" data-test="testString">--><?php //pl_e( 'UI & UX Design') ?><!--</h5>-->
+<!--            <p class="lead">Alex is passionate digital product designer with over 10 years of UI/UX experience. He has worked together with both boutique design ...</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
 	</div>
 </article>
 <!--Our Projects-->

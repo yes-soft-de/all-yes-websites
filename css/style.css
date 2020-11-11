@@ -323,17 +323,21 @@ body {
   position: relative;
 }
 .landing-page > h2 {
-  font-size: 3.5rem;
+  font-size: 3.8vw;
   padding-left: 5%;
+  width: 70%;
+  color: #000 !important;
+  opacity: 0.6;
+}
+@media (max-width: 767px) {
+  .landing-page > h2 {
+    font-size: 6vw;
+  }
 }
 .landing-page .landing-page-sidebar {
-  position: absolute;
   top: 0;
-  right: 0;
-  bottom: 0;
   width: 30%;
   height: 100%;
-  background-color: #002e74;
 }
 .landing-page .landing-page-sidebar .landing-sidebar-logo,
 .landing-page .landing-page-sidebar .landing-sidebar-navigate {
@@ -358,13 +362,29 @@ body {
   top: -2px;
   left: 45px;
 }
+@media (min-width: 768px) and (max-width: 991px) {
+  .landing-page .landing-page-sidebar .sidebar-navigate-home:before {
+    top: 0;
+    left: 40px;
+  }
+}
 .landing-page .landing-page-sidebar .sidebar-navigate-contact {
   border: 4px solid #fff;
   border-radius: 20px;
   padding-top: 0.8rem;
   padding-bottom: 0.8rem;
+  width: 80%;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .landing-page .landing-page-sidebar .sidebar-navigate-contact {
+    padding-top: 0;
+  }
+  .landing-page .landing-page-sidebar .sidebar-navigate-contact a {
+    vertical-align: middle;
+  }
 }
 .landing-page .landing-page-sidebar a {
+  font-size: 2.4vw;
   color: #fff;
   text-decoration: none;
   -webkit-transition: all 0.5s ease;
@@ -375,6 +395,46 @@ body {
 }
 .landing-page .landing-page-sidebar a:hover {
   color: #aaa;
+}
+.landing-page .landing-page-sidebar-mobile {
+  left: 0;
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .landing-page .landing-page-sidebar-mobile .sidebar-navigate-contact {
+    border: 4px solid #fff;
+    border-radius: 20px;
+    padding-bottom: 0.8rem;
+    width: 80%;
+    padding-top: 0;
+  }
+  .landing-page .landing-page-sidebar-mobile .sidebar-navigate-contact a {
+    vertical-align: middle;
+  }
+}
+.landing-page .landing-page-sidebar-mobile a {
+  font-size: 3vw;
+  color: #fff;
+  text-decoration: none;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.landing-page .landing-page-sidebar-mobile a:hover {
+  color: #aaa;
+}
+@media (max-width: 575px) {
+  .landing-page .landing-page-sidebar-mobile a {
+    font-size: 3.5vw;
+  }
+}
+.landing-page .landing-page-sidebar,
+.landing-page .landing-page-sidebar-mobile {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: #002e74;
 }
 
 /*
@@ -487,6 +547,13 @@ article.our-projects .project-content h5 {
   border-style: solid;
   width: max-content;
   padding: 10px 15px;
+}
+article.our-projects .project-content h5 a {
+  color: #000;
+  text-decoration: none;
+}
+article.our-projects .project-content h5 a:hover {
+  color: #002e74;
 }
 article.our-projects .project-content p {
   font-size: 1.9rem;
@@ -779,8 +846,13 @@ article.our-projects .project-content p {
   padding-top: 0;
   padding-bottom: 20px;
 }
+@media (min-width: 768px) and (max-width: 991px) {
+  .services-page .service-box h4 {
+    font-size: 2.3vw;
+  }
+}
 .services-page .service-tax-content .service-content-img {
-  width: 25%;
+  width: 35%;
 }
 .services-page .service-tax-content .whatsapp-contact {
   padding: 0.4rem 1rem;
@@ -794,10 +866,20 @@ article.our-projects .project-content p {
   background: #14c97b;
   color: #fff;
 }
+@media (min-width: 768px) and (max-width: 991px) {
+  .services-page .service-tax-content .whatsapp-contact {
+    width: 100%;
+  }
+}
 .services-page .service-tax-content p {
   font-size: 1.4rem;
   line-height: 1.7;
   text-align: justify;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .services-page .service-tax-content p {
+    font-size: 2.5vw;
+  }
 }
 .services-page .sidebar-best-read-blog h4 a {
   color: #000;

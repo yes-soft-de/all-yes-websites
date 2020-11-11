@@ -22,7 +22,20 @@ jQuery(document).ready( function( $ ) {
     $(this).css('background', 'transparent').find('a').css('color', '#000');;
   });
 
+  // console.log($('.our-projects .project-content'));
+  $('.our-projects .project-content').map(function (e, k) {
+    var childId = '#' + k.getAttribute('id');
+    if (e == 0) {
+      $(childId).find('.first_image').addClass('d-none');
+      $(childId).find('.arrow_image').removeClass('px-0 text-center');
+      $(childId).find('.second_image').removeClass('d-none');
+    } else {
+      $(childId).find('.first_image').removeClass('d-none');
+      // $(childId).find('.arrow_image').removeClass('px-0 text-center');
+      $(childId).find('.second_image').addClass('d-none');
+    }
 
+  });
   // $(window).scroll(function () {
   //   if ($(this).scrollTop() > 80) {
   //     $('.navbar-desktop').css('background-color', 'rgb(0 12 44)');

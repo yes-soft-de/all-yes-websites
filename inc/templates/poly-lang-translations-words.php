@@ -7,7 +7,7 @@ $translationWords = array(
 	'Yes User', 'Yes Soft Company', 'Delivering best services in UI and UX field', 'We\'re the first multi-purpose design kit solutions for businesses. We help help your bridge gaps between your layouts, templates and developers to empower all involved',
 	'Support', 'Delivering faster and more personalized support with shared screens and cool design systems for Figma', 'Learn more', 'Personal Studies',
 	'Identify qualified customers with easy-to-use live chat messaging and Al-based Sales Bot', 'Coponents-driven', 'All in one place', 'You can toggle to any icon within instances and customize outlined stroke to more bolder or lighter',
-	'UI & UX Design',
+	'With the best tools and experience in', 'Software digital product innovation', 'Visual Design',
 
 	// footer
 	'follow us', 'information', 'About Yes User', 'Blog', 'Our Services', 'Privacy Policy', 'Our Projects', 'Terms of Service', 'keep in touch',
