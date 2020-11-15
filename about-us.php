@@ -4,7 +4,7 @@
 ?>
 
 <!--About Us-->
-<article class="about-us">
+<article id="primary-about-us" class="about-us">
 	<div class="container">
 		<div class="about-us-content">
 			<div class="row">

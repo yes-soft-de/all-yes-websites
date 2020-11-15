@@ -18,7 +18,6 @@
     ?>
   </div><!--.sidebar-newsletter-->
 	<div class="sidebar-best-read">
-    <h3 class="font-weight-bold mb-3"><?php pl_e( 'Best Read' ); ?></h3>
 		<?php
 			$args = array(
 				'posts_per_page' => 4,
@@ -28,6 +27,7 @@
 			);
 			$popularpost = new WP_Query( $args );
 			if ( $popularpost->have_posts() ):
+        echo '<h3 class="font-weight-bold mb-3">'. pll_( 'Best Read' ) . '</h3>';
 				while ( $popularpost->have_posts() ) :
 					$popularpost->the_post(); ?>
 

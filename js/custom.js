@@ -9,15 +9,26 @@ jQuery(document).ready( function( $ ) {
       servicesHeight = $('.services').outerHeight(),
       is_rtl = $('head').attr('dir') == 'rtl' ? true : false;
 
+  function sleep (time) {
+    return new Promise((resolve) => setTimeout(resolve, time));
+  }
+
+  // Contact Us Landing Page
+  $('.landing_page_contact_button').click( function (e) {
+    e.preventDefault();
+    window.location.href = '/home#contact-us';
+  });
 
   // Desktop and mobile styles
   if ($(window).outerWidth() >= '768') {
     $('.services').find('.container').css('transform', 'translateY(' + (navBarDesktopHeight + 75) + 'px)');
     $('#primary').css('padding-top', (navBarDesktopHeight + 50) + 'px');
+    $('#primary-about-us').css('padding-top', (navBarDesktopHeight + 50) + 'px');
     $('.first-side .widget-content input[type="submit"]').css('height', firstNewsLetterInputHeight + 'px');
   } else {
     $('.services').find('.container').css('transform', 'translateY(' + (navBarMobileHeight + 40) + 'px)');
     $('#primary').css('padding-top', (navBarMobileHeight + 25) + 'px');
+    $('#primary-about-us').css('padding-top', (navBarMobileHeight + 25) + 'px');
     $('.second-side .widget-content input[type="submit"]').css('height', secondNewsLetterInputHeight + 'px');
   }
 

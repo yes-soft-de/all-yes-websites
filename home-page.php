@@ -105,13 +105,13 @@
 		<div class="row">
 			<div class="col-12 col-sm-6 col-md-4 mb-4 mx-auto">
 				<div class="team-item">
-					<div class="row w-100">
+					<div class="row">
 						<div class="col">
 							<div class="team-member-image mx-auto">
 								<img class="img-responsive rounded-circle" src="<?php echo get_template_directory_uri() . '/images/team/photo-1.jpg' ?>" alt="team member image">
 							</div>
 						</div>
-						<div class="col px-xl-0 text-sm-center text-xl-left" style="place-self: center">
+						<div class="col px-xl-0 text-sm-center text-xl-left pl-0 pl-sm-3" style="place-self: center">
 							<h2 class="h1"><?php pl_e( 'Salma arar' ); ?></h2>
 							<h4 class="font-weight-bold"><?php pl_e( 'Graphic Design' ) ?></h4>
 						</div>
@@ -120,13 +120,13 @@
 			</div>
 			<div class="col-12 col-sm-6 col-md-4 mb-4 mx-auto">
 				<div class="team-item">
-					<div class="row w-100">
+					<div class="row">
 						<div class="col">
 							<div class="team-member-image mx-auto">
 								<img class="img-responsive rounded-circle" src="<?php echo get_template_directory_uri() . '/images/team/photo-2.jpg' ?>" alt="team member image">
 							</div>
 						</div>
-						<div class="col px-xl-0 text-sm-center text-xl-left" style="place-self: center">
+						<div class="col px-xl-0 text-sm-center text-xl-left pl-0 pl-sm-3" style="place-self: center">
 							<h2 class="h1"><?php pl_e( 'Maks Lop' ); ?></h2>
 							<h4 class="font-weight-bold"><?php pl_e( 'Graphic Design' ) ?></h4>
 						</div>
@@ -135,13 +135,13 @@
 			</div>
 			<div class="col-12 col-sm-6 col-md-4 mb-4 mx-auto">
 				<div class="team-item">
-					<div class="row w-100">
+					<div class="row">
 						<div class="col">
 							<div class="team-member-image mx-auto">
 								<img class="img-responsive rounded-circle" src="<?php echo get_template_directory_uri() . '/images/team/photo-3.jpg' ?>" alt="team member image">
 							</div>
 						</div>
-						<div class="col px-xl-0 text-sm-center text-xl-left" style="place-self: center">
+						<div class="col px-xl-0 text-sm-center text-xl-left pl-0 pl-sm-3" style="place-self: center">
 							<h2 class="h1"><?php pl_e( 'Mikel Smeth' ); ?></h2>
 							<h4 class="font-weight-bold"><?php pl_e( 'Graphic Design' ) ?></h4>
 						</div>
@@ -157,9 +157,11 @@
 <article class="our-projects">
 	<div class="container">
     <?php
+      $order = is_rtl() ? 'ASC' : 'DESC';
 	    $args = array(
 		    'post_type' => 'yes_user_project',
-		    'posts_per_page' => 2
+		    'posts_per_page' => 2,
+        'order'     => $order
 	    );
 	    $query = new WP_Query( $args );
 	    if ( $query->have_posts() ):

@@ -193,7 +193,7 @@
 		$i = 0;
 		foreach ( $terms_list as $item ) {
 			$i++;
-			if ( $i > 1 ) { $output .= ', '; }
+//			if ( $i > 1 ) { $output .= ', '; }
 //			$output .= '<a href="' . get_term_link( $item ) . '">'. $item->name .'</a>';
 			$output .= '<h5 class="border-' . $item->slug . '"><a href="' . get_term_link( $item ) . '">'. $item->name .'</a></h5>';
 		}

@@ -52,7 +52,9 @@
           </div>
         <div class="col-2 mx-auto" style="display: grid">
           <div class="logo-bg bg-white">
-            <img class="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/FINAL-LOGO.png' ?>" alt="" title="Yes User Logo"  style="place-self: end;">
+            <a href="<?php echo get_site_url() . '/home'; ?>">
+              <img class="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/FINAL-LOGO.png' ?>" alt="" title="Yes User Logo"  style="place-self: end;">
+            </a>
           </div>
         </div>
           <div class="col-5 align-self-center justify-content-end">
@@ -97,7 +99,9 @@
             </li>
           </ul>
           <div class="logo-bg bg-white">
-            <img class="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/FINAL-LOGO.png' ?>" alt="" title="Yes User Logo"  style="place-self: end;">
+            <a href="<?php echo get_site_url() . '/home'; ?>">
+              <img class="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/FINAL-LOGO.png' ?>" alt="" title="Yes User Logo"  style="place-self: end;">
+            </a>
           </div>
           <button class="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
