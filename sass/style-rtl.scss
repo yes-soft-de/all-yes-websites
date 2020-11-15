@@ -4,7 +4,7 @@
 */
 @import "base/variables";
 @import "base/mixin";
-@import "base/general";
+@import "base/general-rtl";
 
 
 /*
@@ -88,11 +88,11 @@
   }
 
   .left_menu {
-    li.nav-item:first-child { margin-left: 0; }
+    li.nav-item:first-child { margin-right: 0;  /*Edit in ltr*/ }
   }
 
   .right_menu {
-    li.nav-item:last-child { margin-right: 0; }
+    li.nav-item:last-child { margin-left: 0;  /*Edit in ltr*/ }
   }
 
   .language_menu li.nav-item {
@@ -135,7 +135,7 @@
   position: relative;
   & > h2 {
     font-size: 3.8vw;
-    padding-left: 5%;
+    padding-right: 5%; /*Edit in ltr*/
     width: 70%;
     color: $black !important;
     opacity: .6;
@@ -164,10 +164,10 @@
         width: 15%;
         height: 50px;
         top: -2px;
-        left: 45px;
+        right: 45px;  /*Edit in ltr*/
         @media (min-width: 768px) and (max-width: 991px) {
           top: 0;
-          left: 40px;
+          right: 40px;  /*Edit in ltr*/
         }
       }
     }
@@ -189,7 +189,7 @@
     }
   }
   .landing-page-sidebar-mobile {
-    left: 0;
+    right: 0;  /*Edit in ltr*/
     .sidebar-navigate-contact {
       @media (min-width: 576px) and (max-width: 767px) {
         border: 4px solid $white;
@@ -213,7 +213,7 @@
   .landing-page-sidebar,
   .landing-page-sidebar-mobile {
     position: absolute;
-    right: 0;
+    left: 0;  /*Edit in ltr*/
     bottom: 0;
     background-color: $sea-blue;
   }
@@ -257,7 +257,7 @@ article.yes-user-company {
   }
 }
 article.deliver-service {
-  .col-12.col-sm-6:not(:first-child) { padding-left: 0; }
+  .col-12.col-sm-6:not(:first-child) { padding-right: 0;  /*Edit in ltr*/ }
   p { font-size: 1.4rem; }
   .card {
     .card-text { font-size: 1.1rem; }
@@ -369,7 +369,7 @@ article.our-projects {
           border-style: solid;
           padding: .5rem 1rem;
           display: inline-block;
-          margin-right: 1rem;
+          margin-left: 1rem;  /*Edit in ltr*/
           @include animate( all, .5s );
           @media (min-width: 768px) and (max-width: 991px) {
             font-size: 1.6vw;
@@ -506,12 +506,12 @@ article.our-projects {
     &:after {
       @media (min-width: 576px) and (max-width: 991px) {
         top: 10%;
-        right: 0;
+        left: 0;  /*Edit in ltr*/
         width: 75vw;
       }
       @media (max-width: 575px) {
         top: 0;
-        right: 0;
+        left: 0;  /*Edit in ltr*/
         width: 90vw;
       }
     }
@@ -521,7 +521,7 @@ article.our-projects {
   }
   .our-work-filter-slick {
     @media (max-width: 575px) {
-      padding-right: 0;
+      padding-left: 0;  /*Edit in ltr*/
     }
     .service-box {
       margin-left: 2px;
@@ -544,7 +544,7 @@ article.our-projects {
   .entry-content {
     .card-button {
       position: relative;
-      margin-left: 10%;
+      margin-right: 10%;  /*Edit in ltr*/
       &:before {
         content: '';
         display: inline-block;
@@ -554,11 +554,11 @@ article.our-projects {
         width: 36%;
         height: 50px;
         top: -5px;
-        left: -50px;
+        right: -50px;  /*Edit in ltr*/
       }
       &:hover { text-decoration: none; }
       @media (max-width: 575px) {
-        margin-left: 17%;
+        margin-right: 17%;  /*Edit in ltr*/
       }
     }
   }
@@ -626,12 +626,12 @@ article.our-projects {
   .service-project-blog {
     img { width: 100%; }
     .entry-content .card-button {
-      margin-left: 8%;
+      margin-right: 8%;   /*Edit in ltr*/
       @media (min-width: 576px) and (max-width: 767px) {
-        margin-left: 9%;
+        margin-right: 9%;  /*Edit in ltr*/
       }
       @media (max-width: 575px) {
-        margin-left: 25%;
+        margin-right: 25%;  /*Edit in ltr*/
       }
     }
   }
@@ -652,7 +652,7 @@ article.our-projects {
   .single-post .post-edit-link {
     position: absolute;
     top: 0;
-    right: 0; /*Need Change In Rtl*/
+    left: 0;  /*Edit in ltr*/
     padding: 8px;
     background-color: #eee;
     border-radius: 0 0 0 5px; /*Need Change In Rtl*/
@@ -731,7 +731,7 @@ article.our-projects {
 }
 @media (max-width: 992px) {
   .author-box h5 {
-    margin-left: 15px
+    margin-right: 15px  /*Edit in ltr*/
   }
 }
 @media (max-width: 500px) {
@@ -741,28 +741,6 @@ article.our-projects {
 }
 /* ---- End Single Post Page ---- */
 
-
-
-/*
-  Archive
-  ---------------------------------------
- */
-.post-archive {
-  .archive-header h1 {
-    @media (min-width: 768px) and (max-width: 991px) {
-      font-size: 2.3rem;
-    }
-    @media (min-width: 576px) and (max-width: 767px) {
-      font-size: 2rem;
-    }
-    @media (max-width: 575px) {
-      font-size: 1.5rem;
-    }
-  }
-  .category-box:hover {
-    color: $green;
-  }
-}
 
 
 /* ---- Start Comments List ---- */
@@ -825,7 +803,7 @@ h4.comment-number {
   content: 'Author';
   position: absolute;
   top: 10px;
-  right: 20px;
+  left: 20px;   /*Edit in ltr*/
   font-size: 30px;
   font-weight: bold;
   color: #e6e6e6;
@@ -1015,4 +993,3 @@ footer {
   padding: 3%;
 }
 /* end about us */
-

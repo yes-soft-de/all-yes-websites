@@ -19,7 +19,8 @@
 			'left-menu' => 'Left Navigation Menu',
 			'language-menu' => 'Language Navigation Menu',
 			'right-menu' => 'Right Navigation Menu',
-			'mobile-menu' => 'Mobile Navigation Mneu'
+			'mobile-menu' => 'Mobile Navigation Menu',
+			'footer-menu' => 'Footer Navigation Menu',
 		) );
 	}
 	add_action( 'after_setup_theme', 'yes_user_register_menu' );
@@ -29,7 +30,7 @@
 	function yes_user_display_left_menu() {
 		wp_nav_menu( array(
 			'theme_location' => 'left-menu',
-			'menu_class' => 'navbar-nav',
+			'menu_class' => 'navbar-nav left_menu',
 			'container' => false,
 			'depth' => 2,
 			'walker' => new wp_bootstrap_navwalker()
@@ -40,7 +41,7 @@
 	function yes_user_display_right_menu() {
 		wp_nav_menu( array(
 			'theme_location' => 'right-menu',
-			'menu_class' => 'navbar-nav justify-content-center',
+			'menu_class' => 'navbar-nav right_menu justify-content-center',
 			'container' => false,
 			'depth' => 2,
 			'walker' => new wp_bootstrap_navwalker()
@@ -51,7 +52,7 @@
 	function yes_user_display_language_menu() {
 		wp_nav_menu( array(
 			'theme_location' => 'language-menu',
-			'menu_class' => 'navbar-nav justify-content-end',
+			'menu_class' => 'navbar-nav language_menu justify-content-end',
 			'container' => false,
 			'depth' => 2,
 			'walker' => new wp_bootstrap_navwalker()
@@ -62,9 +63,20 @@
 	function yes_user_display_mobile_menu() {
 		wp_nav_menu( array(
 			'theme_location' => 'mobile-menu',
-			'menu_class' => 'navbar-nav',
+			'menu_class' => 'navbar-nav mobile_menu',
 			'container' => false,
 			'depth' => 2,
+			'walker' => new wp_bootstrap_navwalker()
+		) );
+	}
+
+	// Display The Mobile Navigation Bar
+	function yes_user_display_footer_menu() {
+		wp_nav_menu( array(
+			'theme_location' => 'footer-menu',
+			'menu_class' => 'row list-unstyled footer_menu',
+			'container' => false,
+			'depth' => 1,
 			'walker' => new wp_bootstrap_navwalker()
 		) );
 	}

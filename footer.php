@@ -34,7 +34,8 @@
                   </div>
                 </div>
                 <h6 class="my-3"><?php pl_e( 'information' ) ?></h6>
-                <div class="row">
+	              <?php yes_user_display_footer_menu(); ?>
+                <div class="row d-none">
                   <div class="col-6 mb-3">
                     <a href="" class="footer-nav-item"><?php pl_e( 'About Yes User') ?></a>
                   </div>
@@ -57,7 +58,7 @@
               </div>
             </div>
             <div class="col-12 col-md-6">
-              <div class="footer-contact">
+              <div id="contact-us" class="footer-contact">
                 <h6><?php pl_e( 'follow us') ?></h6>
                 <h3 class="mb-5"><?php bloginfo( 'admin_email' ); ?></h3>
                 <h6><?php pl_e( 'keep in touch') ?></h6>

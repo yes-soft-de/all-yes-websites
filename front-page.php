@@ -61,7 +61,7 @@
             </div>
             <div class="col-8 col-sm-12">
               <h2 class="sidebar-navigate-contact mx-auto">
-                <a href="<?php echo get_site_url() . '/contact-us'; ?>">
+                <a href="<?php echo get_site_url() . '/#contact-us'; ?>">
 						      <?php pl_e( 'Contact Us' ) ?>
                   <i class="fa fa-chevron-right fa-fw fa-1x text-white" aria-hidden="true"></i>
                 </a>

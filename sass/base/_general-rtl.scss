@@ -1,0 +1,172 @@
+/*
+    GENERAL STYLE FOR THEME
+  --------------------------------
+*/
+
+body {
+  background-color: $bright-grey;
+}
+
+.img-responsive {
+  width: 100%;
+  height: 100%;
+}
+
+.service-box {
+  border-width: 3px;
+  border-style: solid;
+}
+
+.card-button {
+  border: 1px solid #a2a8b1;
+  display: inline-block;
+  color: #6c5ce7;
+  font-size: 1.2rem;
+}
+
+.background-canvas {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    top: 17%;
+    right: 0;
+    width: 50vw;
+    height: 110vh;
+    background: url("../images/icons/blog-background.png") center center no-repeat;
+    @include backgroundSize(contain);
+    z-index: -1;
+    @media (min-width: 576px) and (max-width: 767px) {
+      top: 10%;
+      right: 0; /*Edit in ltr*/
+      width: 75vw;
+    }
+    @media (max-width: 575px) {
+      top: 0;
+      right: 0;  /*Edit in ltr*/
+      width: 90vw;
+    }
+  }
+}
+
+.slick-slide { float: right !important; }
+
+.bg-bright-green {
+  background-color: $bright-green;
+}
+
+.bg-bright-yellow {
+  background-color: $bright-yellow;
+}
+
+.bg-orange {
+  background-color: $orange;
+}
+
+.bg-grey-border {
+  background-color: $grey-border;
+}
+
+.bg-bing {
+  background-color: $bing;
+}
+
+.bg-sky-blue {
+  background-color: $sky-blue;
+}
+
+.bg-green-blue {
+  background-color: $green-blue;
+}
+
+.bg-red {
+  background-color: $red;
+}
+
+.bg-sea-blue {
+  background-color: $sea-blue;
+}
+
+.bg-green {
+  background-color: $green;
+}
+
+.bg-grey {
+  background-color: $grey;
+}
+
+.border-bright-green,
+.border-branding-graphic-design-ar {
+  border-color: $bright-green;
+}
+
+.border-bright-yellow,
+.border-ux-studies-ar {
+  border-color: $bright-yellow;
+}
+
+.border-orange,
+.border-ui-review-provide-solutions-ar {
+  border-color: $orange;
+}
+
+.border-grey-border,
+.border-digital-strategy-ar {
+  border-color: $grey-border;
+}
+
+.border-bing,
+.border-ux-counseling-ar {
+  border-color: $bing;
+}
+
+.border-sky-blue,
+.border-ux-review-provide-solutions-ar {
+  border-color: $sky-blue;
+}
+
+.border-red,
+.border-usability-testing-ar {
+  border-color: $red;
+}
+
+.border-green-blue,
+.border-ui-ux-design-ar {
+  border-color: $green-blue;
+}
+
+.border-sea-blue {
+  border-color: $sea-blue;
+}
+
+.border-green {
+  border-color: $green;
+}
+
+.border-grey {
+  border-color: $grey;
+}
+
+
+/*Pagination Section*/
+.site-main {
+  .pagination_number span,
+  .pagination_number a {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    background: #eee;
+  }
+  .pagination_number a {
+    color: #45a9b7;
+  }
+  .pagination_number span {
+    color: #394240
+  }
+  .pagination_number a:hover {
+    text-decoration: none;
+    color: $orange
+  }
+}
+/*End Pagination Section*/

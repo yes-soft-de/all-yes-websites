@@ -3,7 +3,12 @@ jQuery(document).ready( function( $ ) {
   var navBarDesktopHeight = $('.navbar-desktop').innerHeight(),
       navBarMobileHeight = $('.navbar-mobile').innerHeight(),
       firstNewsLetterInputHeight = $('.first-side .widget-content input[type="email"]').outerHeight(),
-      secondNewsLetterInputHeight = $('.second-side .widget-content input[type="email"]').outerHeight();
+      secondNewsLetterInputHeight = $('.second-side .widget-content input[type="email"]').outerHeight(),
+      serviceBoxElement = $('.our-work .service-box'),
+      serviceBoxActiveElement = $('.our-work .service-box.active'),
+      servicesHeight = $('.services').outerHeight(),
+      is_rtl = $('head').attr('dir') == 'rtl' ? true : false;
+
 
   // Desktop and mobile styles
   if ($(window).outerWidth() >= '768') {
@@ -16,13 +21,21 @@ jQuery(document).ready( function( $ ) {
     $('.second-side .widget-content input[type="submit"]').css('height', secondNewsLetterInputHeight + 'px');
   }
 
-  $('.our-work .service-box').hover( function () {
+  // Service Box Background
+  serviceBoxElement.hover( function () {
     $(this).css('background', $(this).css('border-color') ).find('a').css('color', '#fff');
   }, function () {
     $(this).css('background', 'transparent').find('a').css('color', '#000');;
   });
 
-  // console.log($('.our-projects .project-content'));
+  // Service Box If Has Active Class
+  if (serviceBoxElement.hasClass('active')) {
+    serviceBoxActiveElement.css('background', serviceBoxActiveElement.css('border-color') ).find('a').css('color', '#fff');
+  }
+
+
+
+  // Our Project style class in Home Page
   $('.our-projects .project-content').map(function (e, k) {
     var childId = '#' + k.getAttribute('id');
     if (e == 0) {
@@ -36,6 +49,8 @@ jQuery(document).ready( function( $ ) {
     }
 
   });
+
+
   // $(window).scroll(function () {
   //   if ($(this).scrollTop() > 80) {
   //     $('.navbar-desktop').css('background-color', 'rgb(0 12 44)');
@@ -43,15 +58,30 @@ jQuery(document).ready( function( $ ) {
   //     $('.navbar-desktop').css('background-color', 'transparent');
   //   }
   // });
+  // Contact Us Smoth Scroll
+  $('.contact_us_link').on('click', function (e) {
+    e.preventDefault();
+    $('html, body').animate({
+      scrollTop: $('#contact-us').offset().top
+    }, 1000);
+  });
+
+  // Footer Menu For Bootstrap Grid
+  $('.footer_menu').find('li').addClass('col-6 mb-3').find('a').addClass('footer-nav-item');
+
 
 
   // Show Service Content When Hover
   $('.service-slide-box').hover( function () {
+    $(this).parents('.services').css('height', servicesHeight);
     $(this).find('h4').slideUp();
     $(this).find('p').slideDown();
+    $(this).parents('.services').css('height', $(this).parents('.services').innerHeight() + ($(this).height() * 0.75) + 'px');
   }, function () {
     $(this).find('h4').slideDown();
     $(this).find('p').slideUp();
+    $(this).parents('.services').css('height', servicesHeight);
+    // $(this).parents('.services').css('height', $(this).parents('.services').innerHeight() - ($(this).height() * 0.75) + 'px');
   });
 
 
@@ -146,6 +176,7 @@ jQuery(document).ready( function( $ ) {
     arrows: false,
     infinite: true,
     speed: 300,
+    rtl: is_rtl,
     slidesToShow: 1,
     centerMode: true,
     variableWidth: true

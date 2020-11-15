@@ -11,8 +11,7 @@
 	<?php endif; ?>
   <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
-
+<body <?php body_class(); ?> <?php echo is_rtl() ? 'style="direction: rtl;"' : ''; ?>>
 <?php
   if ( !is_front_page() ): ?>
 
