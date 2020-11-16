@@ -30,7 +30,7 @@ function yes_user_save_user_contact_form() {
 	if ( $postID != 0 ) {
 
 		$to = get_bloginfo('admin_email');
-		$subject = 'Sunset Contact Form - ' . $name;
+		$subject = 'Yes User Contact Form - ' . $name;
 
 		$headers[] = 'From: ' . get_bloginfo('name') . ' <' . $to .'>'; // 'From: Alex <me@alecaddd.com>'
 		$headers[] = 'Reply-To: '.$name.' <'.$email.'>';
