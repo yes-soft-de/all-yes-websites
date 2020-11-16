@@ -22,6 +22,13 @@
             endwhile;
           endif;
         ?>
+        <div class="col-12">
+          <!--Start Pagination Section-->
+          <div class="pagination_number text-center mt-3">
+			      <?php echo yes_user_pagination_number(); ?>
+          </div>
+          <!--End Pagination Section-->
+        </div>
       </div>
 		</div>
 	</main>

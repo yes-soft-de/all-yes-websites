@@ -9,9 +9,6 @@ jQuery(document).ready( function( $ ) {
       servicesHeight = $('.services').outerHeight(),
       is_rtl = $('head').attr('dir') == 'rtl' ? true : false;
 
-  function sleep (time) {
-    return new Promise((resolve) => setTimeout(resolve, time));
-  }
 
   // Contact Us Landing Page
   $('.landing_page_contact_button').click( function (e) {
