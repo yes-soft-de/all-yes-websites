@@ -353,6 +353,12 @@ article.our-projects {
       margin-bottom: 8rem;
     }
     h3 {
+      a {
+        color: #333;
+        text-decoration: none;
+        @include animate( all, .5s );
+        &:hover { color: $sea-blue; }
+      }
       @media (max-width: 575px) {
         font-size: 1.8rem;
       }

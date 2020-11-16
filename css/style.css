@@ -610,6 +610,18 @@ article.our-projects {
 article.our-projects .project-content:not(:last-child) {
   margin-bottom: 8rem;
 }
+article.our-projects .project-content h3 a {
+  color: #333;
+  text-decoration: none;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+article.our-projects .project-content h3 a:hover {
+  color: #002e74;
+}
 @media (max-width: 575px) {
   article.our-projects .project-content h3 {
     font-size: 1.8rem;

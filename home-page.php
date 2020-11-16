@@ -170,7 +170,7 @@
 	    		<div id="project_content_<?php the_ID(); ?>" class="project-content">
             <div class="row">
               <div class="col-12 col-sm-5 col-md-4 col-lg-3 align-self-sm-center align-self-lg-start mb-3 first_image">
-                <img class="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/lamp.jpg' ?>" alt="browser tab">
+                <img class="img-fluid" src="<?php echo yes_user_get_thumbnail() ?>" alt="browser tab">
               </div>
               <div class="d-none d-md-block col-md-2 arrow_image px-0 text-center" style="place-self: center;">
                 <img class="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/Header-Left.png' ?>" alt="arrow">
