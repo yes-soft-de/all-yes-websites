@@ -9,8 +9,8 @@
     <div class="sidebar-newsletter-logo mt-3 mx-auto">
       <img class="img-responsive" src="<?php echo get_template_directory_uri() . '/images/icons/FINAL-LOGO.png' ?>" alt="" title="Yes User Logo"  style="place-self: flex-end;">
     </div>
-    <h3 class="h2 font-weight-bold"><?php pl_e( 'Yes user newsletter' ); ?></h3>
-    <p class="lead"><?php pl_e( 'Keep in touch with all news and studies of UX Field' ) ?></p>
+    <h3 class="h2 font-weight-bold"><?php pl_e( 'Yes Idea newsletter' ); ?></h3>
+    <p class="lead"><?php pl_e( 'Stay informed of all ideas store news and studies' ) ?></p>
     <?php
       if ( is_active_sidebar( 'newsletter-sidebar' ) ) {
         dynamic_sidebar( 'newsletter-sidebar' );
@@ -35,7 +35,7 @@
               <div class="row">
                 <div class="col-4 pr-0" style="place-self: center;">
                   <a href="<?php the_permalink(); ?>">
-                    <img class="img-fluid" src="<?php echo yes_user_get_thumbnail(); ?>" alt="post thumbnail">
+                    <img class="img-fluid" src="<?php echo yes_idea_get_thumbnail(); ?>" alt="post thumbnail">
                   </a>
                 </div>
                 <div class="col-8">

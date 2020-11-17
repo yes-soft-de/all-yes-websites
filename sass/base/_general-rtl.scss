@@ -4,7 +4,7 @@
 */
 
 body {
-  background-color: $bright-grey;
+  background-color: $white;
 }
 
 .img-responsive {
@@ -18,42 +18,14 @@ body {
 }
 
 .card-button {
-  border: 1px solid #a2a8b1;
+  border: 1px solid $bright-grey;
   display: inline-block;
-  color: #6c5ce7;
+  color: $bright-blue;
   font-size: 1.2rem;
 }
 
-.background-canvas {
-  position: relative;
-  &:after {
-    content: '';
-    position: absolute;
-    display: inline-block;
-    top: 17%;
-    right: 0;
-    width: 50vw;
-    height: 110vh;
-    background: url("../images/icons/blog-background.png") center center no-repeat;
-    @include backgroundSize(contain);
-    z-index: -1;
-    @media (min-width: 576px) and (max-width: 767px) {
-      top: 10%;
-      right: 0; /*Edit in ltr*/
-      width: 75vw;
-    }
-    @media (max-width: 575px) {
-      top: 0;
-      right: 0;  /*Edit in ltr*/
-      width: 90vw;
-    }
-  }
-}
-
-.slick-slide { float: right !important; }
-
-.bg-bright-green {
-  background-color: $bright-green;
+.bg-bright-blue {
+  background-color: $bright-blue;
 }
 
 .bg-bright-yellow {
@@ -64,88 +36,58 @@ body {
   background-color: $orange;
 }
 
-.bg-grey-border {
-  background-color: $grey-border;
-}
-
-.bg-bing {
-  background-color: $bing;
-}
-
-.bg-sky-blue {
-  background-color: $sky-blue;
-}
-
-.bg-green-blue {
-  background-color: $green-blue;
-}
-
-.bg-red {
-  background-color: $red;
-}
-
-.bg-sea-blue {
-  background-color: $sea-blue;
-}
-
-.bg-green {
-  background-color: $green;
+.bg-bright-grey {
+  background-color: $bright-grey;
 }
 
 .bg-grey {
-  background-color: $grey;
+  background-color: $bright-grey;
 }
 
-.border-bright-green,
-.border-branding-graphic-design-ar {
-  border-color: $bright-green;
+.text-app-health-ar,
+.text-app-language-ar {
+  color: $bright-blue;
+}
+
+.text-app-games-ar {
+  color: $bright-yellow;
+}
+
+.text-app-chat-ar {
+  color: $orange;
+}
+
+.text-app-kids-ar,
+.text-app-work-ar {
+  color: $grey;
+}
+
+.border-bright-blue,
+.border-app-health-ar {
+  border-color: $bright-blue;
 }
 
 .border-bright-yellow,
-.border-ux-studies-ar {
+.border-app-games-ar {
   border-color: $bright-yellow;
 }
 
 .border-orange,
-.border-ui-review-provide-solutions-ar {
+.border-app-chat-ar {
   border-color: $orange;
 }
 
 .border-grey-border,
-.border-digital-strategy-ar {
-  border-color: $grey-border;
+.border-app-kids-ar {
+  border-color: $white;
 }
 
-.border-bing,
-.border-ux-counseling-ar {
-  border-color: $bing;
+.border-app-language {
+  border-color: $bright-blue;
 }
 
-.border-sky-blue,
-.border-ux-review-provide-solutions-ar {
-  border-color: $sky-blue;
-}
-
-.border-red,
-.border-usability-testing-ar {
-  border-color: $red;
-}
-
-.border-green-blue,
-.border-ui-ux-design-ar {
-  border-color: $green-blue;
-}
-
-.border-sea-blue {
-  border-color: $sea-blue;
-}
-
-.border-green {
-  border-color: $green;
-}
-
-.border-grey {
-  border-color: $grey;
+.border-app-work-ar {
+  border-color: $white;
 }
 
 
@@ -156,10 +98,10 @@ body {
     border-radius: 5px;
     border: 1px solid #ccc;
     padding: 5px;
-    background: #eee;
+    background: $bright-grey;
   }
   .pagination_number a {
-    color: #45a9b7;
+    color: $bright-blue;
   }
   .pagination_number span {
     color: #394240

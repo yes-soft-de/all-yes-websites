@@ -4,7 +4,7 @@
 
 <!--Start Service Section-->
 <?php
-  $terms =	get_terms( 'yes_user_project_category', array( 'hide_empty' => 0 ));
+  $terms =	get_terms( 'yes_idea_project_category', array( 'hide_empty' => 0 ));
 	if ( $terms ): ?>
   <article class="services">
     <div class="container">
@@ -13,7 +13,7 @@
           <div   class="col-12 col-sm-6 col-lg-4 mx-auto">
             <div class="service-box mb-3 mb-md-5 p-2 p-md-4 service-slide-box border-<?php echo esc_html( $term->slug ); ?>">
               <h4><?php echo esc_html( $term->name ) ?></h4>
-              <p class="text-white"><?php echo esc_html( $term->description ); ?></p>
+              <p><?php echo esc_html( $term->description ); ?></p>
             </div>
           </div>
         <?php endforeach; ?>
@@ -23,14 +23,14 @@
 <?php endif; ?>
 <!--End Service Section-->
 
-<!--Yes User Company-->
-<article class="yes-user-company">
+<!--Yes Idea Company-->
+<article class="yes-idea-company">
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-md-6 col-lg-5">
-				<h2 class="h1"><?php pl_e( 'Yes User' ) ?></h2>
-				<span class="d-inline-block my-2"><?php pl_e( 'Yes Soft Company' ) ?></span>
-				<p class="yes-user-desc"><?php pl_e( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cumque debitis dicta dolorem esse facere harum id incidunt iste minima nesciunt, odit quae quasi quibusdam similique soluta sunt vel voluptates?' ) ?></p>
+				<h2 class="h1"><?php pl_e( 'Yes Idea' ) ?></h2>
+				<span class="d-inline-block font-weight-bold my-2"><?php pl_e( 'Yes Soft Company' ) ?></span>
+				<p class="yes-idea-desc"><?php pl_e( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cumque debitis dicta dolorem esse facere harum id incidunt iste minima nesciunt, odit quae quasi quibusdam similique soluta sunt vel voluptates?' ) ?></p>
 			</div>
 			<div class="col-12 col-md-6 col-lg-7">
 				<img class="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/About-us-2.gif' ?>" alt="">
@@ -38,7 +38,7 @@
 		</div>
 	</div>
 </article>
-<!--Yes User Company-->
+<!--Yes Idea Company-->
 
 <!--Delivering Best Service-->
 <article class="deliver-service bg-white">
@@ -159,7 +159,7 @@
     <?php
       $order = is_rtl() ? 'ASC' : 'DESC';
 	    $args = array(
-		    'post_type' => 'yes_user_project',
+		    'post_type' => 'yes_idea_project',
 		    'posts_per_page' => 2,
         'order'     => $order
 	    );
@@ -169,19 +169,19 @@
 			    $query->the_post(); ?>
 	    		<div id="project_content_<?php the_ID(); ?>" class="project-content">
             <div class="row">
-              <div class="col-12 col-sm-5 col-md-4 col-lg-3 align-self-sm-center align-self-lg-start mb-3 first_image">
-                <img class="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/lamp.jpg' ?>" alt="browser tab">
+              <div class="col-12 col-sm-5 col-md-4 align-self-sm-center align-self-lg-start mb-3 first_image">
+                <img class="img-fluid" src="<?php echo yes_idea_get_thumbnail() ?>" alt="browser tab">
               </div>
               <div class="d-none d-md-block col-md-2 arrow_image px-0 text-center" style="place-self: center;">
                 <img class="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/Header-Left.png' ?>" alt="arrow">
               </div>
-              <div class="col-12 col-sm-7 col-md-6 col-lg-7">
-                <h3 class="h2 font-weight-bold"><a href="<?php echo get_term_link( $term->slug, 'yes_user_project_category' ); ?>"><?php echo get_the_title(); ?></a></h3>
-                <?php echo yes_user_get_terms( $post->ID, 'yes_user_project_category' ); ?>
+              <div class="col-12 col-sm-7 col-md-6">
+                <h3 class="h2 font-weight-bold"><a href="<?php echo get_term_link( $term->slug, 'yes_idea_project_category' ); ?>"><?php echo get_the_title(); ?></a></h3>
+                <?php echo yes_idea_get_terms( $post->ID, 'yes_idea_project_category' ); ?>
                 <p class="lead"><?php echo get_the_excerpt(); ?></p>
               </div>
-              <div class="col-12 col-sm-5 col-md-4 col-lg-3 align-self-sm-center align-self-lg-start second_image">
-                <img class="img-fluid" src="<?php echo yes_user_get_thumbnail() ?>" alt="browser tab">
+              <div class="col-12 col-sm-5 col-md-4 align-self-sm-center align-self-lg-start second_image">
+                <img class="img-fluid" src="<?php echo yes_idea_get_thumbnail() ?>" alt="browser tab">
               </div>
             </div>
           </div><!--.project-content-->

@@ -25,15 +25,6 @@
     left: 0;
     right: 0;
     z-index: 9;
-    .nav-box {
-      & > img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-      }
-    }
     .logo-bg {
       height: 70%;
       place-self: end;
@@ -42,7 +33,7 @@
       }
     }
     .nav-link i {
-      color: $white;
+      color: $grey;
     }
   }
   &.navbar-mobile {
@@ -51,20 +42,11 @@
     left: 0;
     right: 0;
     z-index: 9;
-    .nav-box {
-      & > img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-      }
-    }
     .nav-item {
       &.active {
-        .nav-link { color: $green; }
+        .nav-link { color: $bright-blue; }
       }
-      .nav-link { color: $white; }
+      .nav-link { color: $grey; }
       &:last-child {
         margin-bottom: 1rem;
       }
@@ -84,20 +66,20 @@
   .slack-icon:hover i,
   .twitter-icon:hover i {
     @include animate( all, .3s );
-    color: $green;
+    color: $bright-blue;
   }
 
   .left_menu {
-    li.nav-item:first-child { margin-right: 0;  /*Edit in ltr*/ }
+    li.nav-item:first-child { margin-right: 0; /* Edit In ltr */ }
   }
 
   .right_menu {
-    li.nav-item:last-child { margin-left: 0;  /*Edit in ltr*/ }
+    li.nav-item:last-child { margin-left: 0;  /* Edit In ltr */ }
   }
 
   .language_menu li.nav-item {
     font-size: 1.4rem;
-    a { color: $white; }
+    a { color: $grey; }
     @media (min-width: 768px) and (max-width: 991px) {
       font-size: 1.2rem;
     }
@@ -106,7 +88,7 @@
   .left_menu li.nav-item,
   .right_menu li.nav-item {
     font-size: 1.5rem; margin: 0 auto; position: relative;
-    a { color: $white; }
+    a { color: $grey; }
     @media (min-width: 768px) and (max-width: 992px) {
       font-size: 1.2rem;
     }
@@ -118,7 +100,7 @@
   .left_menu .nav-item.active a,
   .right_menu .nav-item:hover a,
   .right_menu .nav-item.active a {
-    color: $green;
+    color: $bright-blue;
   }
 }
 
@@ -130,14 +112,14 @@
 .landing-page {
   width: 100vw;
   height: 100vh;
-  background: url("../images/all/landing-page-background.jpg") center center no-repeat;
+  background: url("../images/all/landing-page-background.png") center center no-repeat;
   @include backgroundSize(cover);
   position: relative;
   & > h2 {
     font-size: 3.8vw;
-    padding-right: 5%; /*Edit in ltr*/
+    padding-right: 5%;  /* Edit In ltr */
     width: 70%;
-    color: $black !important;
+    color: $white !important;
     opacity: .6;
     @media (max-width: 767px) {
       font-size: 6vw;
@@ -159,20 +141,20 @@
         content: '';
         display: inline-block;
         position: absolute;
-        background: url("../images/icons/white-Header-Left.png") center center no-repeat;
+        background: url("../images/icons/blue-Header-Left.png") center center no-repeat;
         @include backgroundSize( contain );
         width: 15%;
         height: 50px;
         top: -2px;
-        right: 45px;  /*Edit in ltr*/
+        right: 45px; /* Edit In ltr */
         @media (min-width: 768px) and (max-width: 991px) {
           top: 0;
-          right: 40px;  /*Edit in ltr*/
+          right: 40px; /* Edit In ltr */
         }
       }
     }
     .sidebar-navigate-contact {
-      border: 4px solid $white;
+      border: 4px solid $bright-blue;
       border-radius: 20px;
       padding-top: .8rem;
       padding-bottom: .8rem;
@@ -184,27 +166,25 @@
         }
       }
     }
-    a { font-size: 2.4vw; color: $white ; text-decoration: none; @include animate(all, .5s);
-      &:hover { color: #aaa; }
+    a { font-size: 2.4vw; color: $bright-blue ; text-decoration: none; @include animate(all, .5s);
+      &:hover { color: $bright-grey; }
     }
   }
   .landing-page-sidebar-mobile {
-    right: 0;  /*Edit in ltr*/
+    right: 0; /* Edit In ltr */
     .sidebar-navigate-contact {
       @media (min-width: 576px) and (max-width: 767px) {
-        border: 4px solid $white;
+        border: 4px solid $bright-blue;
         border-radius: 20px;
         //padding-top: .8rem;
         padding-bottom: .8rem;
         width: 80%;
         padding-top: 0;
-        a {
-          vertical-align: middle;
-        }
+        a { vertical-align: middle; }
       }
     }
-    a { font-size: 3vw; color: $white ; text-decoration: none; @include animate(all, .5s);
-      &:hover { color: #aaa; }
+    a { font-size: 3vw; color: $bright-blue ; text-decoration: none; @include animate(all, .5s);
+      &:hover { color: $bright-grey; }
       @media (max-width: 575px) {
         font-size: 3.5vw;
       }
@@ -213,9 +193,9 @@
   .landing-page-sidebar,
   .landing-page-sidebar-mobile {
     position: absolute;
-    left: 0;  /*Edit in ltr*/
+    left: 0; /* Edit In ltr */
     bottom: 0;
-    background-color: $sea-blue;
+    background-color: $white;
   }
 }
 
@@ -233,16 +213,17 @@ article { padding: 100px 0;
 }
 article.services {
   @include animate( all, .5s);
-  background: url("../images/icons/Slider.gif") center center no-repeat;
+  background: url("../images/all/bg-service.png") bottom center no-repeat;
   @include backgroundSize(cover);
-  height: 120vh;
+  height: 100vh;
   padding: 0;
-  color: $white;
+  color: $black;
   text-align: center;
   @media (max-width: 575px) {
     height: 130vh;
   }
   .service-box {
+    background-color: rgba(255, 255, 255, .5);
     h4 {
       @media (max-width: 575px) {
         font-size: 1.1rem;
@@ -251,9 +232,10 @@ article.services {
     p { display: none; }
   }
 }
-article.yes-user-company {
-  span { font-size: 1rem; }
-  .yes-user-desc { font-size: 1.8rem;
+article.yes-idea-company {
+  background-color: $white;
+  span { font-size: 1.5rem; }
+  .yes-idea-desc { font-size: 1.8rem;
     @media (min-width: 768px) and (max-width: 991px) {
       font-size: 1.6rem;
       word-break: break-all;
@@ -267,11 +249,14 @@ article.yes-user-company {
   }
 }
 article.deliver-service {
+  background: url("../images/all/bg-deliver-service.png") center center no-repeat;
+  @include backgroundSize(cover);
   .col-12.col-sm-6:not(:first-child) {
     @media (min-width: 992px) {
-      padding-right: 0;  /*Edit in ltr*/
+      padding-right: 0; /* Edit In ltr */
     }
   }
+  .card { background-color: transparent; }
   h2 {
     @media (min-width: 576px) and (max-width: 767px) {
       font-size: 1.8rem;
@@ -296,11 +281,11 @@ article.our-team {
   .col-12.col-sm-6:nth-child(2) {
     border-width: 3px;
     border-style: solid;
-    -webkit-border-image: -webkit-linear-gradient( to bottom, $sky-blue, $white ) 0 100%;
-    -moz-border-image: -moz-linear-gradient( to bottom, $sky-blue, $white ) 0 100%;
-    -o-border-image: -o-linear-gradient( to bottom, $sky-blue, $white ) 0 100%;
-    -ms-border-image: -ms-linear-gradient( to bottom, $sky-blue, $white ) 0 100%;
-    border-image: linear-gradient( to bottom, $sky-blue, $white ) 0 100%;
+    -webkit-border-image: -webkit-linear-gradient( to bottom, $bright-blue, $white ) 0 100%;
+    -moz-border-image: -moz-linear-gradient( to bottom, $bright-blue, $white ) 0 100%;
+    -o-border-image: -o-linear-gradient( to bottom, $bright-blue, $white ) 0 100%;
+    -ms-border-image: -ms-linear-gradient( to bottom, $bright-blue, $white ) 0 100%;
+    border-image: linear-gradient( to bottom, $bright-blue, $white ) 0 100%;
     @media (max-width: 767px) {
       border: none
     }
@@ -309,7 +294,7 @@ article.our-team {
     .team-member-image {
       width: 200px;
       height: 200px;
-      background: linear-gradient( to bottom, $white, $sea-blue);
+      background: linear-gradient( to bottom, $white, $bright-blue);
       padding: 5px;
       border-radius: 50%;
       @media (min-width: 576px) and (max-width: 767px) {
@@ -321,7 +306,7 @@ article.our-team {
         height: 150px;
       }
     }
-    h2 { color: $sea-blue; font-weight: 400;
+    h2 { color: $bright-blue; font-weight: 400;
       @media (max-width: 991px) {
         font-size: 1.7rem;
         margin-top: 1rem;
@@ -348,25 +333,26 @@ article.our-team {
 }
 article.our-projects {
   padding: 50px 0;
+  background-color: $white;
   .project-content {
     &:not(:last-child) {
       margin-bottom: 8rem;
     }
     h3 {
-      @media (max-width: 575px) {
-        font-size: 1.8rem;
+      a {
+        color: #333;
+        text-decoration: none;
+        @include animate( all, .5s );
+        &:hover { color: $bright-blue; }
       }
+      @media (max-width: 575px) { font-size: 1.8rem; }
     }
     h5 {
-      border-width: 4px;
-      border-style: solid;
-      width: max-content;
-      padding: 10px 15px;
       a {
-        color: $black;
+        color: $orange;
         text-decoration: none;
         &:hover {
-          color: $sea-blue;
+          color: $bright-blue;
         }
       }
       @media (min-width: 576px) and (max-width: 767px) {
@@ -397,6 +383,7 @@ article.our-projects {
   --------------------------------
 */
 .content-area {
+  background-color: $bright-grey;
   .blog-main {
     .entry-header {
       img { width: 100%; }
@@ -406,7 +393,7 @@ article.our-projects {
         &:hover {
           a {
             text-decoration: none;
-            color: $sea-blue;
+            color: $bright-blue;
           }
         }
         @media (min-width: 768px) and (max-width: 991px) {
@@ -422,11 +409,11 @@ article.our-projects {
       a {
         color: $black;
         .category-box {
-          border-width: 1px;
+          border-width: 3px;
           border-style: solid;
           padding: .5rem 1rem;
           display: inline-block;
-          margin-left: 1rem;  /*Edit in ltr*/
+          margin-left: 1rem; /* Edit In ltr */
           @include animate( all, .5s );
           @media (min-width: 768px) and (max-width: 991px) {
             font-size: 1.6vw;
@@ -441,12 +428,8 @@ article.our-projects {
             padding: 0.4rem 0.8rem;
           }
         }
-        &:hover .category-box.border-green-blue {
-          background: $green-blue;
-          color: $white;
-        }
-        &:hover .category-box.border-bing {
-          background: $bing;
+        &:hover .category-box {
+          background: $bright-blue;
           color: $white;
         }
       }
@@ -465,18 +448,18 @@ article.our-projects {
 
     .blog-sidebar {
       .sidebar-newsletter {
-        border: 3px solid $bright-green;
+        border: 3px solid $bright-blue;
         .sidebar-newsletter-logo {
           display: flex;
-          width: 40%;
-          height: 75px;
+          width: 45%;
+          height: 90px;
           @media (min-width: 768px) and (max-width: 991px) {
             width: 60%;
-            height: 60px;
+            height: 70px;
           }
           @media (max-width: 767px) {
             width: 50%;
-            height: 60px;
+            height: 90px;
           }
         }
         h3.h2 {
@@ -518,24 +501,25 @@ article.our-projects {
             width: 35%;
             color: $white;
             //font-size: 1.1rem;
-            background-color: $sea-blue;
-            border-bottom: 1px solid #002e74;
+            background-color: $bright-blue;
+            border-bottom: 1px solid $bright-blue;
             outline: none;
             cursor: pointer;
             @include animate(all, .5s);
             &:hover {
-              background-color: $blue;
+              background-color: $bright-blue;
             }
             @media (min-width: 768px) and (max-width: 991px) {
               font-size: 0.8rem;
             }
+            &:hover { color: $grey; }
           }
         }
       }
       .sidebar-best-read-blog {
         h4 {
           a { color: $black; text-decoration: none;
-            &:hover { color: $sea-blue; }
+            &:hover { color: $bright-blue; }
           }
           @media (min-width: 768px) and (max-width: 991px) {
             font-size: 1.4rem;
@@ -559,30 +543,18 @@ article.our-projects {
 */
 .our-work {
   article { padding: 25px 0; }
-  &.background-canvas {
-    &:after {
-      @media (min-width: 576px) and (max-width: 991px) {
-        top: 10%;
-        left: 0;  /*Edit in ltr*/
-        width: 75vw;
-      }
-      @media (max-width: 575px) {
-        top: 0;
-        left: 0;  /*Edit in ltr*/
-        width: 90vw;
-      }
-    }
-  }
   .our-work-icon {
-    i.fa-bars { color: $bing; }
+    i.fa-bars { color: $orange; }
   }
   .our-work-filter-slick {
     @media (max-width: 575px) {
-      padding-left: 0;  /*Edit in ltr*/
+      padding-left: 0; /* Edit In ltr */
     }
     .service-box {
       margin-left: 2px;
       margin-right: 2px;
+      min-width: 20vw;
+      text-align: center;
       h4 {
         @media (min-width: 768px) and (max-width: 991px) {
           font-size: 1.3rem;
@@ -598,24 +570,34 @@ article.our-projects {
       a { color: $black; text-decoration: none; outline: none; @include animate( all, .5s ); }
     }
   }
+  .entry-header {
+    img { height: 25vw;
+      @media (min-width: 576px) and (max-width: 767px) {
+        height: 35vw;
+      }
+      @media (max-width: 575px) {
+        height: 40vw;
+      }
+    }
+  }
   .entry-content {
     .card-button {
       position: relative;
-      margin-right: 10%;  /*Edit in ltr*/
+      margin-right: 10%; /* Edit In ltr */
       &:before {
         content: '';
         display: inline-block;
         position: absolute;
-        background: url("../images/icons/Header-Left.png") center center no-repeat;
+        background: url("../images/icons/blue-Header-Left.png") center center no-repeat;
         @include backgroundSize( contain );
         width: 36%;
         height: 50px;
         top: -5px;
-        right: -50px;  /*Edit in ltr*/
+        right: -50px; /* Edit In ltr */
       }
       &:hover { text-decoration: none; }
       @media (max-width: 575px) {
-        margin-right: 17%;  /*Edit in ltr*/
+        margin-right: 17%; /* Edit In ltr */
       }
     }
   }
@@ -676,19 +658,19 @@ article.our-projects {
   .sidebar-best-read-blog {
     h4 {
       a { color: $black; text-decoration: none;
-        &:hover { color: $sea-blue; }
+        &:hover { color: $bright-blue; }
       }
     }
   }
   .service-project-blog {
     img { width: 100%; }
     .entry-content .card-button {
-      margin-right: 8%;   /*Edit in ltr*/
+      margin-right: 8%; /* Edit In ltr */
       @media (min-width: 576px) and (max-width: 767px) {
-        margin-right: 9%;  /*Edit in ltr*/
+        margin-right: 9%; /* Edit In ltr */
       }
       @media (max-width: 575px) {
-        margin-right: 25%;  /*Edit in ltr*/
+        margin-right: 25%; /* Edit In ltr */
       }
     }
   }
@@ -709,7 +691,7 @@ article.our-projects {
   .single-post .post-edit-link {
     position: absolute;
     top: 0;
-    left: 0;  /*Edit in ltr*/
+    left: 0; /*Need Change In Rtl*/
     padding: 8px;
     background-color: #eee;
     border-radius: 0 0 0 5px; /*Need Change In Rtl*/
@@ -788,7 +770,7 @@ article.our-projects {
 }
 @media (max-width: 992px) {
   .author-box h5 {
-    margin-right: 15px  /*Edit in ltr*/
+    margin-right: 15px; /* Edit In ltr */
   }
 }
 @media (max-width: 500px) {
@@ -817,7 +799,7 @@ article.our-projects {
     }
   }
   .category-box:hover {
-    color: $green;
+    color: $bright-blue;
   }
 }
 
@@ -882,7 +864,7 @@ h4.comment-number {
   content: 'Author';
   position: absolute;
   top: 10px;
-  left: 20px;   /*Edit in ltr*/
+  left: 20px; /* Edit In ltr */
   font-size: 30px;
   font-weight: bold;
   color: #e6e6e6;
@@ -957,7 +939,7 @@ h4.comment-number {
 */
 footer {
   padding: 50px 0;
-  h6 { text-transform: uppercase; color: $grey; letter-spacing: .1rem; }
+  h6 { text-transform: uppercase; color: $white; letter-spacing: .1rem; }
   .footer-info {
     & > div {
       @media (max-width: 767px) {
@@ -967,7 +949,7 @@ footer {
     }
     .social-icon {
       display: block;
-      color: $sea-blue;
+      color: $white;
     }
   }
   .facebook-icon:hover,
@@ -975,19 +957,19 @@ footer {
   .slack-icon:hover,
   .twitter-icon:hover {
     @include animate( all, .3s );
-    width: fit-content;
+    width: max-content;
     padding: .2rem;
-    background: $green;
-    color: $white;
+    background: $white;
+    color: $bright-blue;
     border-radius: 50%;
   }
 
   .footer-nav-item {
-    color: #222;
-    &:hover { color: $green; }
+    color: $white;
+    &:hover { color: $grey; }
   }
   .footer-contact {
-    h3 { color: $sea-blue;
+    h3 { color: $white;
       @media (min-width: 576px) and (max-width: 767px) {
         font-size: 1.5rem;
       }
@@ -997,7 +979,7 @@ footer {
     }
   }
 
-  .yes-user-contact-form {
+  .yes-idea-contact-form {
     .form-control-msg {
       text-transform: uppercase;
       font-weight: 500;
@@ -1012,14 +994,14 @@ footer {
     .btn-custom {
       width: 100%;
       height: 90%;
-      background-color: $sea-blue;
-      color: $white;
+      background-color: $white;
+      color: $bright-blue;
       text-transform: uppercase;
       cursor: pointer;
       padding: 0;
+      &:hover { color: $grey; }
     }
   }
-
 
   .footer-input-control {
     position: relative;
@@ -1064,7 +1046,7 @@ footer {
   width  : auto;
 }
 .about-us-title {
-  color: $sea-blue; ;
+  color: $bright-blue; ;
   font-style: italic;
   font-size: 50px;
 }

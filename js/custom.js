@@ -9,15 +9,13 @@ jQuery(document).ready( function( $ ) {
       servicesHeight = $('.services').outerHeight(),
       is_rtl = $('head').attr('dir') == 'rtl' ? true : false;
 
-  function sleep (time) {
-    return new Promise((resolve) => setTimeout(resolve, time));
-  }
 
   // Contact Us Landing Page
   $('.landing_page_contact_button').click( function (e) {
     e.preventDefault();
     window.location.href = '/home#contact-us';
   });
+
 
   // Desktop and mobile styles
   if ($(window).outerWidth() >= '768') {
@@ -34,14 +32,14 @@ jQuery(document).ready( function( $ ) {
 
   // Service Box Background
   serviceBoxElement.hover( function () {
-    $(this).css('background', $(this).css('border-color') ).find('a').css('color', '#fff');
+    $(this).css('background', $(this).css('border-color') ).find('a').css('color', '#707070');
   }, function () {
     $(this).css('background', 'transparent').find('a').css('color', '#000');;
   });
 
   // Service Box If Has Active Class
   if (serviceBoxElement.hasClass('active')) {
-    serviceBoxActiveElement.css('background', serviceBoxActiveElement.css('border-color') ).find('a').css('color', '#fff');
+    serviceBoxActiveElement.css('background', serviceBoxActiveElement.css('border-color') ).find('a').css('color', '#707070');
   }
 
 
@@ -97,7 +95,7 @@ jQuery(document).ready( function( $ ) {
 
 
   /* Contact From Submission */
-  $('#yesUserContactForm').on('submit', function (e) {
+  $('#yesIdeaContactForm').on('submit', function (e) {
     // Prevent Form Submit Default
     e.preventDefault();
 
@@ -137,7 +135,7 @@ jQuery(document).ready( function( $ ) {
         name : name,
         email : email,
         message : message,
-        action: 'yes_user_save_user_contact_form'
+        action: 'yes_idea_save_user_contact_form'
       },
       error : function( response ) {
         $('.js-form-submission').removeClass('js-show-feedback');
@@ -171,12 +169,12 @@ jQuery(document).ready( function( $ ) {
       $(childId).addClass('col-12')
         .find('.time-parent-box').addClass('col-6 col-md-5 col-lg-4 text-right')
         .siblings('.category-parent-box').addClass('col-6 col-md-7 col-lg-8')
-        .find('.category-box').addClass('border-green-blue mb-2');
+        .find('.category-box').addClass('border-bright-blue mb-2');
     } else {
       $(childId).addClass('col-6')
         .find('.time-parent-box').addClass('col-12 mt-lg-2')
         .siblings('.category-parent-box').addClass('col-12')
-        .find('.category-box').addClass('border-bing mb-2');
+        .find('.category-box').addClass('border-bright-blue w-100 text-center mb-2');
     }
   });
 

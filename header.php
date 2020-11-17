@@ -12,12 +12,12 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> <?php echo is_rtl() ? 'style="direction: rtl;"' : ''; ?>>
+<?php global $template; ?>
 <?php
   if ( !is_front_page() ): ?>
 
-  <nav class="navbar navbar-expand-lg navbar-desktop p-0 d-none d-md-block">
+  <nav class="navbar navbar-expand-lg navbar-desktop p-0 d-none d-md-block <?php echo basename($template) == 'home-page.php' ? 'bg-white' : 'bg-bright-grey'; ?>">
     <div class="nav-box position-relative w-100 p-3 pb-4">
-      <img class="img-responsive" src="<?php echo get_template_directory_uri() . '/images/icons/bg-nav.png' ?>" alt="header background">
       <div class="container">
         <div class="row">
           <div class="col-5 mx-auto align-self-center">
@@ -25,30 +25,26 @@
               <li class="nav-item facebook-icon pr-md-2">
                 <a class="nav-link" href="#">
                   <i class="fa fa-facebook fa-fw fa-lg"></i>
-<!--                  <img class="img-fluid" src="--><?php //echo get_template_directory_uri() . '/images/icons/Facebook.png' ?><!--">-->
                 </a>
               </li>
               <li class="nav-item linkedin-icon px-md-2">
 
                 <a class="nav-link" href="#">
                   <i class="fa fa-linkedin fa-fw fa-lg"></i>
-<!--                  <img class="img-fluid" src="--><?php //echo get_template_directory_uri() . '/images/icons/icon-linkedin.png' ?><!--">-->
                 </a>
               </li>
               <li class="nav-item slack-icon px-md-2">
                 <a class="nav-link" href="#">
                   <i class="fa fa-slack fa-fw fa-lg"></i>
-<!--                  <img class="img-fluid" src="--><?php //echo get_template_directory_uri() . '/images/icons/icon-slack.png' ?><!--">-->
                 </a>
               </li>
               <li class="nav-item twitter-icon px-md-2">
                 <a class="nav-link" href="#">
                   <i class="fa fa-twitter fa-fw fa-lg"></i>
-<!--                  <img class="img-fluid" src="--><?php //echo get_template_directory_uri() . '/images/icons/icon-twitter.png' ?><!--">-->
                 </a>
               </li>
             </ul>
-            <?php yes_user_display_left_menu(); ?>
+            <?php yes_idea_display_left_menu(); ?>
           </div>
         <div class="col-2 mx-auto" style="display: grid">
           <div class="logo-bg bg-white">
@@ -58,8 +54,8 @@
           </div>
         </div>
           <div class="col-5 align-self-center justify-content-end">
-            <?php yes_user_display_language_menu(); ?>
-            <?php yes_user_display_right_menu(); ?>
+            <?php yes_idea_display_language_menu(); ?>
+            <?php yes_idea_display_right_menu(); ?>
           </div>
         </div>
       </div>
@@ -67,34 +63,29 @@
   </nav>
 
 <!--Mobile Navbar-->
-    <nav class="navbar navbar-light navbar-expand-md navbar-mobile d-md-none p-0">
-      <div class="nav-box position-relative w-100 p-3 pb-4">
-        <img class="img-responsive" src="<?php echo get_template_directory_uri() . '/images/icons/bg-nav.png' ?>" alt="header background">
+    <nav class="navbar navbar-light navbar-expand-md navbar-mobile d-md-none p-0 <?php echo basename($template) == 'home-page.php' ? 'bg-white' : 'bg-bright-grey'; ?>">
+      <div class="nav-box position-relative w-100">
+<!--        <img class="img-responsive" src="--><?php //echo get_template_directory_uri() . '/images/icons/bg-nav.png' ?><!--" alt="header background">-->
         <div class="container navbar">
           <ul class="navbar-nav custom-navbar-social">
             <li class="nav-item facebook-icon pr-1">
               <a class="nav-link" href="#">
                 <i class="fa fa-facebook fa-fw fa-lg"></i>
-                <!--                  <img class="img-fluid" src="--><?php //echo get_template_directory_uri() . '/images/icons/Facebook.png' ?><!--">-->
               </a>
             </li>
             <li class="nav-item linkedin-icon px-1">
-
               <a class="nav-link" href="#">
                 <i class="fa fa-linkedin fa-fw fa-lg"></i>
-                <!--                  <img class="img-fluid" src="--><?php //echo get_template_directory_uri() . '/images/icons/icon-linkedin.png' ?><!--">-->
               </a>
             </li>
             <li class="nav-item slack-icon px-1">
               <a class="nav-link" href="#">
                 <i class="fa fa-slack fa-fw fa-lg"></i>
-                <!--                  <img class="img-fluid" src="--><?php //echo get_template_directory_uri() . '/images/icons/icon-slack.png' ?><!--">-->
               </a>
             </li>
             <li class="nav-item twitter-icon px-1">
               <a class="nav-link" href="#">
                 <i class="fa fa-twitter fa-fw fa-lg"></i>
-                <!--                  <img class="img-fluid" src="--><?php //echo get_template_directory_uri() . '/images/icons/icon-twitter.png' ?><!--">-->
               </a>
             </li>
           </ul>
@@ -108,7 +99,7 @@
           </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <?php yes_user_display_mobile_menu(); ?>
+            <?php yes_idea_display_mobile_menu(); ?>
           </div>
         </div>
       </div>

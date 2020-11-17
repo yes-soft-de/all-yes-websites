@@ -3,11 +3,11 @@
   get_header();
 
   // get Term For Custom Post Type
-	$terms =	get_terms( 'yes_user_project_category', array( 'hide_empty' => 0 )); ?>
+	$terms =	get_terms( 'yes_idea_project_category', array( 'hide_empty' => 0 )); ?>
 
 <!--Our Work-->
 <div id="primary" class="content-area">
-	<main id="main" class="site-main our-work background-canvas">
+	<main id="main" class="site-main our-work">
 		<?php if ( $terms ): ?>
 			<div class="our-work-filter mt-4 my-lg-0">
 				<div class="row w-100">
@@ -15,7 +15,7 @@
 	          <?php foreach ( $terms as $term ): ?>
 	            <div class="mx-auto">
 	              <div class="service-box p-2 border-<?php echo esc_html( $term->slug ); ?>">
-	                <h4><a href="<?php echo get_term_link( $term->slug, 'yes_user_project_category' ) ?>"><?php echo esc_html( $term->name ) ?></a></h4>
+	                <h4><a href="<?php echo get_term_link( $term->slug, 'yes_idea_project_category' ) ?>"><?php echo esc_html( $term->name ) ?></a></h4>
 	              </div>
 	            </div>
 	          <?php endforeach; ?>
@@ -31,7 +31,7 @@
         <?php
 	        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
           $args = array(
-          	'post_type' => 'yes_user_project',
+          	'post_type' => 'yes_idea_project',
 	          'posts_per_page' => 2,
 	          'paged' => $paged
           );
@@ -49,7 +49,7 @@
 				<div class="col-12">
 					<!--Start Pagination Section-->
 					<div class="pagination_number text-center mb-4">
-						<?php echo yes_user_pagination_number( 'yes_user_project' ); ?>
+						<?php echo yes_idea_pagination_number( 'yes_idea_project' ); ?>
 					</div>
 					<!--End Pagination Section-->
 				</div>

@@ -31,7 +31,7 @@
 	}
 
 
-	function yes_user_add_to_poly_lang_register() {
+	function yes_idea_add_to_poly_lang_register() {
 		global $translationWords;
 		if ( function_exists( 'pll_register_string' ) && !empty( $translationWords ) ) {
 			foreach( $translationWords as $word ) {
@@ -39,5 +39,5 @@
 			}
 		}
 	}
-	add_action( 'after_setup_theme', 'yes_user_add_to_poly_lang_register' );
+	add_action( 'after_setup_theme', 'yes_idea_add_to_poly_lang_register' );
 

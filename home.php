@@ -7,7 +7,7 @@
 
 <!-- Blog Section	-->
 <div id="primary" class="content-area">
-	<main id="main" class="site-main blog-main background-canvas" role="main">
+	<main id="main" class="site-main blog-main" role="main">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="d-none d-md-block col-md-4 first-side">
@@ -31,7 +31,7 @@
         <div class="col-12">
           <!--Start Pagination Section-->
           <div class="pagination_number text-center mt-3">
-		        <?php echo yes_user_pagination_number(); ?>
+		        <?php echo yes_idea_pagination_number(); ?>
           </div>
           <!--End Pagination Section-->
         </div>

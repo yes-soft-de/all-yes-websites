@@ -9,7 +9,7 @@
 	 * function to add theme scripts
 	 * Add By @Talal
 	 * */
-	function yes_user_load_scripts() {
+	function yes_idea_load_scripts() {
 		// Enqueue Styles
 		// Check IF The Theme Is Rtl Or Not
 		if ( is_rtl() ) {   // Enqueue Style Files For rtl Direction
@@ -45,4 +45,4 @@
 		wp_enqueue_script( 'respond-js', get_template_directory() . '/js/respond.min.js' );
 		wp_script_add_data( 'respond-js', 'conditional', 'lt it 9' );
 	}
-	add_action( 'wp_enqueue_scripts', 'yes_user_load_scripts' );
+	add_action( 'wp_enqueue_scripts', 'yes_idea_load_scripts' );

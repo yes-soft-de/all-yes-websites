@@ -5,7 +5,7 @@
 ?>
 <?php
 	if ( !is_front_page() ): ?>
-      <footer class="bg-white">
+      <footer class="bg-bright-blue">
         <div class="container-fluid">
           <div class="row">
             <div class="col-12 col-md-6">
@@ -34,27 +34,7 @@
                   </div>
                 </div>
                 <h6 class="my-3"><?php pl_e( 'information' ) ?></h6>
-	              <?php yes_user_display_footer_menu(); ?>
-                <div class="row d-none">
-                  <div class="col-6 mb-3">
-                    <a href="" class="footer-nav-item"><?php pl_e( 'About Yes User') ?></a>
-                  </div>
-                  <div class="col-6 mb-3">
-                    <a href="" class="footer-nav-item"><?php pl_e( 'Our Services') ?></a>
-                  </div>
-                  <div class="col-6 mb-3">
-                    <a href="" class="footer-nav-item"><?php pl_e( 'Blog') ?></a>
-                  </div>
-                  <div class="col-6 mb-3">
-                    <a href="" class="footer-nav-item"><?php pl_e( 'Privacy Policy') ?></a>
-                  </div>
-                  <div class="col-6 mb-3">
-                    <a href="" class="footer-nav-item"><?php pl_e( 'Our Projects') ?></a>
-                  </div>
-                  <div class="col-6 mb-3">
-                    <a href="" class="footer-nav-item"><?php pl_e( 'Terms of Service') ?></a>
-                  </div>
-                </div>
+	              <?php yes_idea_display_footer_menu(); ?>
               </div>
             </div>
             <div class="col-12 col-md-6">
@@ -63,7 +43,7 @@
                 <h3 class="mb-5"><?php bloginfo( 'admin_email' ); ?></h3>
                 <h6><?php pl_e( 'keep in touch') ?></h6>
                 <div class="footer-contact-form">
-                  <form id="yesUserContactForm" class="yes-user-contact-form" action="#" method="post" data-url="<?php echo admin_url( 'admin-ajax.php'); ?>">
+                  <form id="yesIdeaContactForm" class="yes-idea-contact-form" action="#" method="post" data-url="<?php echo admin_url( 'admin-ajax.php'); ?>">
                     <div class="form-group">
                       <div class="row">
                         <div class="col-6 mb-4 footer-input">

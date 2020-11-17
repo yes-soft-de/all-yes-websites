@@ -14,7 +14,7 @@
 
 
 	// ِ ِ Activate Navigation Menu
-	function yes_user_register_menu() {
+	function yes_idea_register_menu() {
 		register_nav_menus( array(
 			'left-menu' => 'Left Navigation Menu',
 			'language-menu' => 'Language Navigation Menu',
@@ -23,11 +23,11 @@
 			'footer-menu' => 'Footer Navigation Menu',
 		) );
 	}
-	add_action( 'after_setup_theme', 'yes_user_register_menu' );
+	add_action( 'after_setup_theme', 'yes_idea_register_menu' );
 
 
 	// Display The Left Menu Navigation Bar
-	function yes_user_display_left_menu() {
+	function yes_idea_display_left_menu() {
 		wp_nav_menu( array(
 			'theme_location' => 'left-menu',
 			'menu_class' => 'navbar-nav left_menu',
@@ -38,7 +38,7 @@
 	}
 
 	// Display The Right Menu Navigation Bar
-	function yes_user_display_right_menu() {
+	function yes_idea_display_right_menu() {
 		wp_nav_menu( array(
 			'theme_location' => 'right-menu',
 			'menu_class' => 'navbar-nav right_menu justify-content-center',
@@ -49,7 +49,7 @@
 	}
 
 	// Display The Language Navigation Bar
-	function yes_user_display_language_menu() {
+	function yes_idea_display_language_menu() {
 		wp_nav_menu( array(
 			'theme_location' => 'language-menu',
 			'menu_class' => 'navbar-nav language_menu justify-content-end',
@@ -60,7 +60,7 @@
 	}
 
 	// Display The Mobile Navigation Bar
-	function yes_user_display_mobile_menu() {
+	function yes_idea_display_mobile_menu() {
 		wp_nav_menu( array(
 			'theme_location' => 'mobile-menu',
 			'menu_class' => 'navbar-nav mobile_menu',
@@ -71,7 +71,7 @@
 	}
 
 	// Display The Mobile Navigation Bar
-	function yes_user_display_footer_menu() {
+	function yes_idea_display_footer_menu() {
 		wp_nav_menu( array(
 			'theme_location' => 'footer-menu',
 			'menu_class' => 'row list-unstyled footer_menu',
@@ -83,7 +83,7 @@
 
 
 	// function to register new sidebar
-	function yes_user_footer_side_bar() {
+	function yes_idea_footer_side_bar() {
 		register_sidebar( array(
 			'name'            => 'Newsletter Sidebar',
 			'id'              => 'newsletter-sidebar',
@@ -95,11 +95,11 @@
 			'after_title'   => '</h3>'
 		) );
 	}
-	add_action( 'widgets_init', 'yes_user_footer_side_bar' );
+	add_action( 'widgets_init', 'yes_idea_footer_side_bar' );
 
 
 	// function to get thumbnail image
-	function yes_user_get_thumbnail() {
+	function yes_idea_get_thumbnail() {
 		$output = '';
 		if ( has_post_thumbnail() ) {
 			$output = wp_get_attachment_url( get_post_thumbnail_id( get_the_ID() ) );
@@ -111,7 +111,7 @@
 
 
 	// function to get post categories
-	function yes_user_get_categories() {
+	function yes_idea_get_categories() {
 		$output = '';
 		$categories = get_the_category();
 		$i = 1;
@@ -124,7 +124,7 @@
 	}
 
 	// Pagination N
-	function yes_user_pagination_number($post_type = '') {
+	function yes_idea_pagination_number($post_type = '') {
 		if ( $post_type != '' ) {
 			$args = array( 'post_type' => $post_type );
 			$wp_query = new WP_Query( $args );
@@ -169,7 +169,7 @@
 
 
 	// Get Template Name
-	function yes_user_get_template_name( $page_id = null ) {
+	function yes_idea_get_template_name( $page_id = null ) {
 		if ( ! $template = get_page_template_slug( $page_id ) )
 			return;
 		if ( ! $file = locate_template( $template ) )
@@ -186,16 +186,16 @@
 	}
 
  //  Function To Get The Custom Taxonomies For Our Custom Post Type
-	function yes_user_get_terms( $postID, $term ) {
+	function yes_idea_get_terms( $postID, $term ) {
 		$terms_list = wp_get_post_terms( $postID, $term );
 //		var_dump($terms_list);
 		$output = '';
 		$i = 0;
 		foreach ( $terms_list as $item ) {
 			$i++;
-//			if ( $i > 1 ) { $output .= ', '; }
+			if ( $i > 1 ) { $output .= ', '; }
 //			$output .= '<a href="' . get_term_link( $item ) . '">'. $item->name .'</a>';
-			$output .= '<h5 class="border-' . $item->slug . '"><a href="' . get_term_link( $item ) . '">'. $item->name .'</a></h5>';
+			$output .= '<h5><a href="' . get_term_link( $item ) . '">'. $item->name .'</a></h5>';
 		}
 		return $output;
 	}
