@@ -11,7 +11,7 @@
 		<?php if ( $terms ): ?>
 			<div class="our-work-filter mt-4 my-lg-0">
 				<div class="row w-100">
-					<div class="col-10 col-sm-11 our-work-filter-slick">
+					<div class="col-12 our-work-filter-slick">
 	          <?php foreach ( $terms as $term ): ?>
 	            <div class="mx-auto">
 	              <div class="service-box p-2 border-<?php echo esc_html( $term->slug ); ?>">
@@ -20,9 +20,9 @@
 	            </div>
 	          <?php endforeach; ?>
 					</div><!--.our-work-filter-slick-->
-					<div class="col-2 col-sm-1 our-work-icon m-auto">
-						<i class="fa fa-bars fa-fw fa-3x"></i>
-					</div>
+<!--					<div class="col-2 col-sm-1 our-work-icon m-auto">-->
+<!--						<i class="fa fa-bars fa-fw fa-3x"></i>-->
+<!--					</div>-->
 				</div><!--.row-->
 			</div><!--.our-work-filter-->
 		<?php endif; ?>
@@ -32,7 +32,7 @@
 	        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
           $args = array(
           	'post_type' => 'yes_user_project',
-	          'posts_per_page' => 2,
+//	          'posts_per_page' => 2,
 	          'paged' => $paged
           );
           $query = new WP_Query( $args );

@@ -130,15 +130,18 @@
 .landing-page {
   width: 100vw;
   height: 100vh;
-  background: url("../images/all/landing-page-background.jpg") center center no-repeat;
+  background: url("../images/all/landing-page-background.png") center center no-repeat;
   @include backgroundSize(cover);
   position: relative;
+  left: -8px;
+  top: -8px;
   & > h2 {
     font-size: 3.8vw;
     padding-left: 5%;
     width: 70%;
     color: $black !important;
-    opacity: .6;
+    font-weight: bold;
+    letter-spacing: .2rem;
     @media (max-width: 767px) {
       font-size: 6vw;
     }
@@ -233,7 +236,7 @@ article { padding: 100px 0;
 }
 article.services {
   @include animate( all, .5s);
-  background: url("../images/icons/Slider.gif") center center no-repeat;
+  background: url("../images/icons/Slider.gif") bottom center no-repeat;
   @include backgroundSize(cover);
   height: 120vh;
   padding: 0;
@@ -505,19 +508,23 @@ article.our-projects {
           }
         }
         .widget-content {
+          input { font-size: 20px; }
           input[type="email"] {
             width: 65%;
-            padding: 1.4rem;
+            padding: 1.1rem;
             outline: none;
             border-top: 1px solid;
+            border-bottom: none;
+            border-left: none;
             @media (min-width: 768px) and (max-width: 991px) {
-              padding: 1rem;
+              padding: 0.8rem;
+              font-size: 1.7vw;
             }
             @media (min-width: 576px) and (max-width: 767px) {
-              padding: 0.9rem;
+              padding: 0.7rem;
             }
             @media (max-width: 575px) {
-              padding: 0.7rem;
+              padding: 0.6rem;
             }
           }
           input[type="submit"] {
@@ -525,7 +532,7 @@ article.our-projects {
             color: $white;
             //font-size: 1.1rem;
             background-color: $sea-blue;
-            border-bottom: 1px solid #002e74;
+            border-bottom: none;
             outline: none;
             cursor: pointer;
             @include animate(all, .5s);
@@ -533,7 +540,7 @@ article.our-projects {
               background-color: $blue;
             }
             @media (min-width: 768px) and (max-width: 991px) {
-              font-size: 0.8rem;
+              font-size: 1.7vw;
             }
           }
         }
@@ -635,9 +642,15 @@ article.our-projects {
 */
 .services-page {
   article { padding-top: 0; padding-bottom: 20px; }
-  .service-box h4 {
-    @media (min-width: 768px) and (max-width: 991px) {
-      font-size: 2.3vw;
+  .service-box-link { text-decoration: none; color: $black;
+  &:hover { color: $white; }
+  }
+  .service-box {
+    h4 {
+      font-weight: 400;
+      @media (min-width: 768px) and (max-width: 991px) {
+        font-size: 2.3vw;
+      }
     }
   }
   .service-tax-content {
@@ -707,99 +720,139 @@ article.our-projects {
   -----------------------------------------
 */
 .blog-main {
-  padding-bottom: 50px;
-  .single-post {
-    position: relative;
-    background: #f8f9fa
+  .entry-header,
+  .entry-content .sidebar-trending-article {
+    span {
+      font-size: 1.2rem;
+      font-weight: 500;
+      a { text-decoration: none; color: $href-blue; margin-right: .5rem;
+        &:hover { color: $sea-blue; @include animate(color, .5s); }
+      }
+      @media (min-width: 576px) and (max-width: 991px) {
+        font-size: 1rem;
+      }
+    }
   }
-  .single-post .post-edit-link {
-    position: absolute;
-    top: 0;
-    right: 0; /*Need Change In Rtl*/
-    padding: 8px;
-    background-color: #eee;
-    border-radius: 0 0 0 5px; /*Need Change In Rtl*/
+  .entry-header {
+    .entry-title {
+      @media (min-width: 768px) and (max-width: 991px) {
+        font-size: 2.1rem;
+      }
+      @media (min-width: 576px) and (max-width: 767px) {
+        font-size: 1.8rem;
+      }
+    }
   }
-  .single-post h2 a {
-    text-decoration: none;
-    color: #45a9b7;
-    letter-spacing: 1px
+  .top-author-box {
+    h4 { color: $blue;
+      @media (min-width: 576px) and (max-width: 767px) {
+        font-size: 1.3rem;
+      }
+    }
+    .lead {
+      @media (min-width: 768px) and (max-width: 991px) {
+        font-size: 1.1rem;
+      }
+      @media (min-width: 576px) and (max-width: 767px) {
+        font-size: 1rem;
+      }
+    }
+    .share-icon {
+      width: max-content;
+      color: $grey;
+      cursor: pointer;
+      i {
+        font-size: 6vw;
+        &:hover { color: $grey-border; }
+      }
+    }
   }
-  .single-post h2:hover a {
-    color: $orange
-  }
-  .single-post .single-post-detail {
-    color: #394240;
-    font-size: 14px
-  }
-  .single-post .single-post-img {
-    height: 400px;
-    text-align: center
-  }
-  .single-post .single-post-img img {
-    max-height: 400px;
-  }
-  .single-post hr {
-    width: 25%
-  }
-  .single-post .post-content,
-  .single-post .post-categories {
-    color: #394240
-  }
-  .single-post .post-categories,
-  .our-posts .custom-post .post-categories {
-    /* background: #eee; */
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid $orange;
-  }
-  .random-post .post-author-title {
-    background: #45a9b7;
-    padding: 5px 10px;
-    color: $white;
-    border-radius: 5px
-  }
-  .random-post .post-author-random-posts {
-    font-size: 18px;
-    border: 1px solid #eee;
-    border-radius: 5px
-  }
-  .author-box {
-    background-color: $white;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-top: 10px
-  }
-  .author-box h5 {
-    display: inline-block;
-    color: #555;
-  }
-  .author-box .author-nickname {
-    color: #45a9b7;
-    font-weight: 600
-  }
-  .author-box p {
-    color: #777;
-    font-size: 13px;
-  }
-  .author-box .author-status {
-    font-size: 14px;
-    color: #777;
-  }
-  .author-box .posts-count {
-    color: $orange;
-    font-weight: 600
-  }
-}
-@media (max-width: 992px) {
-  .author-box h5 {
-    margin-left: 15px
-  }
-}
-@media (max-width: 500px) {
-  .author-box h5 {
-    font-size: 13px;
+  .entry-content {
+    .sidebar-trending-article {
+      span { font-size: 1rem; }
+      h4 a { text-decoration: none;
+        &:hover { color: $blue; }
+      }
+    }
+    .tags {
+      color: $blue;
+      a {
+        background: $tag-background;
+        padding: .1rem .9rem;
+        border-radius: 15px;
+        color: $blue;
+        text-decoration: none;
+        text-transform: capitalize;
+        margin-left: .5rem;
+        &:hover { color: $white; }
+        &:first-of-type { margin-left: 1rem; }
+      }
+    }
+    .sidebar-newsletter {
+      .sidebar-newsletter-logo {
+        @media (min-width: 768px) and (max-width: 991px) {
+          width: 60%;
+          height: 60px;
+        }
+        @media (max-width: 767px) {
+          width: 50%;
+          height: 60px;
+        }
+      }
+      h3.h2 {
+        @media (min-width: 992px) and (max-width: 1199px) {
+          font-size: 1.8rem;
+        }
+
+
+        @media (min-width: 768px) and (max-width: 991px) {
+          font-size: 1.8rem;
+        }
+        @media (min-width: 576px) and (max-width: 767px) {
+          font-size: 1.7rem;
+        }
+        @media (max-width: 575px) {
+          font-size: 1.6rem;
+        }
+      }
+      p.lead {
+
+
+        @media (min-width: 768px) and (max-width: 991px) {
+          font-size: 1.1rem;
+        }
+        @media (max-width: 767px) {
+          font-size: 1rem;
+        }
+      }
+      .widget-content {
+        input {
+          font-size: 20px;
+          @media (min-width: 992px) and (max-width: 1199px) {
+            font-size: 1.2vw !important;
+          }
+        }
+        input[type="email"] {
+
+          @media (min-width: 768px) and (max-width: 991px) {
+            padding: 0.8rem;
+            font-size: 1.7vw;
+          }
+          @media (min-width: 576px) and (max-width: 767px) {
+            padding: 0.7rem;
+          }
+          @media (max-width: 575px) {
+            padding: 0.6rem;
+          }
+        }
+        input[type="submit"] {
+
+          @media (min-width: 768px) and (max-width: 991px) {
+            font-size: 1.7vw;
+          }
+        }
+      }
+    }
   }
 }
 /* ---- End Single Post Page ---- */

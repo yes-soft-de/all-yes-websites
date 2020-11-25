@@ -13,12 +13,12 @@
                 <h6 class="mb-3"><?php pl_e( 'follow us' ) ?></h6>
                 <div class="row col-10 mb-5">
                   <div class="col px-0">
-                    <a class="social-icon facebook-icon" href="#">
+                    <a class="social-icon facebook-icon" href="https://www.facebook.com/yes.user.de/">
                       <i class="fa fa-facebook fa-fw fa-lg"></i>
                     </a>
                   </div>
                   <div class="col px-0">
-                    <a class="social-icon linkedin-icon" href="#">
+                    <a class="social-icon linkedin-icon" href="https://www.linkedin.com/mwlite/company/yes-user">
                       <i class="fa fa-linkedin fa-fw fa-lg"></i>
                     </a>
                   </div>

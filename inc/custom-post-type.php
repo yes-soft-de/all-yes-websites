@@ -33,12 +33,14 @@
 //		'taxonomies'          => array( 'category', 'post_tag' ),
 			'menu_position'       => 5,
 			'exclude_from_search' => false,
+			'show_in_rest' => true,
 			'supports' => array(
 				'title',
 				'editor',
 				'excerpt',
 				'thumbnail',
 				'revisions',
+				'custom-fields',
 				'comments'
 			)
 		);

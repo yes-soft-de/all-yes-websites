@@ -1,25 +1,24 @@
 <?php	get_header(); ?>
-
 <!-- Say Yes Page -->
 <article class="landing-page">
   <div id="typed-header-strings" class="text-white">
     <p><?php pl_e( 'Say Yes To ...' ) ?></p>
-    <p><?php pl_e( 'Say Yes To Perfection,' ) ?></p>
-    <p><?php pl_e( 'Say Yes To Creativity,' ) ?></p>
-    <p><?php pl_e( 'Say Yes To High Professionalism,' ) ?></p>
-    <p><?php pl_e( 'Say Yes To Excellent User Experience,' ) ?></p>
-    <p><?php pl_e( 'and Technology.' ) ?></p>
-    <p><?php pl_e( 'Say Yes To Yes User Company' ) ?></p>
+    <p><?php pl_e( 'Say Yes To <br> Perfection,' ) ?></p>
+    <p><?php pl_e( 'Say Yes To <br> Creativity,' ) ?></p>
+    <p><?php pl_e( 'Say Yes To <br> High Professionalism,' ) ?></p>
+    <p><?php pl_e( 'Say Yes To <br> Excellent User Experience,' ) ?></p>
+    <p><?php pl_e( 'Say Yes To <br> and Technology.' ) ?></p>
+    <p><?php pl_e( 'Say Yes To <br> Yes User Company' ) ?></p>
     <p><?php pl_e( ' ' ) ?></p>
-    <p><?php pl_e( 'With the best tools and experience in' ) ?></p>
+    <p><?php pl_e( 'With the best tools <br> and experience in' ) ?></p>
     <p><?php pl_e( 'UI & UX design' ) ?></p>
     <p><?php pl_e( 'UX Studies' ) ?></p>
     <p><?php pl_e( 'Software digital product innovation' ) ?></p>
-    <p><?php pl_e( 'Ui review & provide solutions' ) ?></p>
-    <p><?php pl_e( 'Ux review & provide solutions' ) ?></p>
-    <p><?php pl_e( 'Digital strategy' ) ?></p>
-    <p><?php pl_e( 'Visual Design' ) ?></p>
-    <p><?php pl_e( 'Branding & Graphic Design' ) ?></p>
+    <p><?php pl_e( 'Ui review & <br> provide solutions' ) ?></p>
+    <p><?php pl_e( 'Ux review & <br> provide solutions' ) ?></p>
+    <p><?php pl_e( 'Digital strategy ^1000\n `Visual Design` ^1000\n `Branding & Graphic Design`' ) ?></p>
+<!--    <p>--><?php //pl_e( 'Visual Design' ) ?><!--</p>-->
+<!--    <p>--><?php //pl_e( 'Branding & Graphic Design' ) ?><!--</p>-->
   </div>
   <h2 id="typed" class="text-white"></h2>
   <div class="landing-page-sidebar d-none d-md-block">

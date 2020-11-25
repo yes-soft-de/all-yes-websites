@@ -18,6 +18,9 @@
       </div>
 	    <div class="time-parent-box col-6 col-md-5 col-lg-4 text-right">
         <span class="text-muted"><i class="fa fa-clock-o fa-fw"></i><?php the_time( 'F J, Y' ); ?></span>
+		    <?php if (get_post_meta( get_the_ID(), 'read_time', true) != ''): ?>
+          <span class="text-muted d-block"><i class="fa fa-clock-o fa-fw"></i><?php echo get_post_meta( get_the_ID(), 'read_time', true); ?></span>
+		    <?php endif; ?>
       </div>
     </div>
   </div>

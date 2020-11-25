@@ -15,7 +15,7 @@
 				<?php if ( $terms ): ?>
 					<div class="col-12 our-work-filter mb-4 my-lg-0 d-md-none">
 						<div class="row w-100">
-							<div class="col-10 col-sm-11 our-work-filter-slick">
+							<div class="col-12 our-work-filter-slick">
 								<?php foreach ( $terms as $term ):
 									$activeClass = ($term->slug == $projectCatSlug ? 'active' : ''); ?>
 									<div class="mx-auto">
@@ -25,9 +25,9 @@
 									</div>
 								<?php endforeach; ?>
 							</div><!--.our-work-filter-slick-->
-							<div class="col-2 col-sm-1 our-work-icon m-auto">
-								<i class="fa fa-bars fa-fw fa-3x"></i>
-							</div>
+<!--							<div class="col-2 col-sm-1 our-work-icon m-auto">-->
+<!--								<i class="fa fa-bars fa-fw fa-3x"></i>-->
+<!--							</div>-->
 						</div><!--.row-->
 					</div><!--.our-work-filter-->
 				<?php endif; ?>
@@ -37,9 +37,11 @@
 								<?php foreach ( $terms as $term ):
 									$style = ($term->slug == $projectCatSlug ? $termSlugActiveStyle : ''); ?>
 									<li class="mb-3" <?php echo $style; ?>>
-										<div class="service-box text-center p-2 border-<?php echo esc_html( $term->slug ); ?>">
-											<h4><?php echo esc_html( $term->name ) ?></h4>
-										</div>
+	                  <a class="service-box-link" href="<?php echo get_term_link( $term->slug, 'yes_user_project_category' ) ?>">
+											<div class="service-box text-center p-2 border-<?php echo esc_html( $term->slug ); ?>">
+												<h4><?php echo esc_html( $term->name ) ?></h4>
+											</div>
+	                  </a>
 									</li>
 								<?php endforeach; ?>
 						</ul>
@@ -97,9 +99,10 @@
 						<h3 class="mb-4"><?php pl_e( 'Related Project' ) ?></h3>
 						<?php
 							$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+//							$paged = ( get_query_var('page') ) ? get_query_var('page') : 1;
 							$args = array(
 								'post_type' => 'yes_user_project',
-								'posts_per_page' => 1,
+//								'posts_per_page' => 1,
 								'paged' => $paged,
 								'tax_query' => array(
 									array(
@@ -121,15 +124,18 @@
               else:
                 echo '<p class="alert alert-info">' . pll_( 'This category don\'t have any project yet' ) . '</p>';
 							endif;
+//							the_posts_pagination();
+
 							wp_reset_postdata();
 						?>
 					</div><!--.service-project-blog-->
 				</div><!--.col-8-->
         <div class="col-12">
           <!--Start Pagination Section-->
-<!--          <div class="pagination_number text-center mb-4 mt-5">-->
-<!--						--><?php //echo yes_user_pagination_number( 'yes_user_project' ); ?>
-<!--          </div>-->
+          <div class="pagination_number text-center mb-4 mt-5">
+<!--            --><?php //the_posts_pagination(); ?>
+            <?php echo yes_user_pagination_number('yes_user_project', 'yes_user_project_category', $projectCatSlug);?>
+          </div>
           <!--End Pagination Section-->
         </div>
 			</div><!--.row-->

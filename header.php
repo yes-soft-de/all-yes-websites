@@ -23,14 +23,14 @@
           <div class="col-5 mx-auto align-self-center">
             <ul class="navbar-nav mx-auto">
               <li class="nav-item facebook-icon pr-md-2">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="https://www.facebook.com/yes.user.de/">
                   <i class="fa fa-facebook fa-fw fa-lg"></i>
 <!--                  <img class="img-fluid" src="--><?php //echo get_template_directory_uri() . '/images/icons/Facebook.png' ?><!--">-->
                 </a>
               </li>
               <li class="nav-item linkedin-icon px-md-2">
 
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="https://www.linkedin.com/mwlite/company/yes-user">
                   <i class="fa fa-linkedin fa-fw fa-lg"></i>
 <!--                  <img class="img-fluid" src="--><?php //echo get_template_directory_uri() . '/images/icons/icon-linkedin.png' ?><!--">-->
                 </a>

@@ -81,15 +81,21 @@ jQuery(document).ready( function( $ ) {
 
   // Show Service Content When Hover
   $('.service-slide-box').hover( function () {
-    $(this).parents('.services').css('height', servicesHeight);
-    $(this).find('h4').slideUp();
-    $(this).find('p').slideDown();
-    $(this).parents('.services').css('height', $(this).parents('.services').innerHeight() + ($(this).height() * 0.75) + 'px');
+    var PElement = $(this).find('p');
+    if (PElement.text() != '') {
+      $(this).parents('.services').css('height', servicesHeight);
+      $(this).find('h4').slideUp();
+      PElement.slideDown();
+      $(this).parents('.services').css('height', $(this).parents('.services').innerHeight() + ($(this).height() * 0.75) + 'px');
+    }
   }, function () {
-    $(this).find('h4').slideDown();
-    $(this).find('p').slideUp();
-    $(this).parents('.services').css('height', servicesHeight);
-    // $(this).parents('.services').css('height', $(this).parents('.services').innerHeight() - ($(this).height() * 0.75) + 'px');
+    var PElement = $(this).find('p');
+    if (PElement.text() != '') {
+      $(this).find('h4').slideDown();
+      PElement.slideUp();
+      $(this).parents('.services').css('height', servicesHeight);
+      // $(this).parents('.services').css('height', $(this).parents('.services').innerHeight() - ($(this).height() * 0.75) + 'px');
+    }
   });
 
 
@@ -165,10 +171,18 @@ jQuery(document).ready( function( $ ) {
   $('#primary .blog-main .blog-posts .row').children().map(function (e, k) {
     var childId = '#' + k.getAttribute('id');
     if (e == 0) {
-      $(childId).addClass('col-12')
-        .find('.time-parent-box').addClass('col-6 col-md-5 col-lg-4 text-right')
-        .siblings('.category-parent-box').addClass('col-6 col-md-7 col-lg-8')
-        .find('.category-box').addClass('border-green-blue mb-2');
+      if ($(childId).find('.time-parent-box').find('span').is('.read_time')) {
+        $(childId).addClass('col-12')
+          .find('.time-parent-box').addClass('col-6 col-md-5 col-lg-4 text-right').find('.read_time').removeClass('pull-right').addClass('d-block')
+          .parent('.time-parent-box')
+          .siblings('.category-parent-box').addClass('col-6 col-md-7 col-lg-8')
+          .find('.category-box').addClass('border-green-blue mb-2');
+      } else {
+        $(childId).addClass('col-12')
+          .find('.time-parent-box').addClass('col-6 col-md-5 col-lg-4 text-right')
+          .siblings('.category-parent-box').addClass('col-6 col-md-7 col-lg-8')
+          .find('.category-box').addClass('border-green-blue mb-2');
+      }
     } else {
       $(childId).addClass('col-6')
         .find('.time-parent-box').addClass('col-12 mt-lg-2')
@@ -197,6 +211,7 @@ jQuery(document).ready( function( $ ) {
     // strings: ['Say Yes To: ...', 'Say Yes To: Creative', 'Say Yes To: Magnate', '', 'Say Yes To: Yes User'],
     typeSpeed: 50,
     backSpeed: 50,
+    cursorChar: '',
     smartBackspace: true, // this is a default
     loop: true
   });

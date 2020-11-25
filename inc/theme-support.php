@@ -124,10 +124,26 @@
 	}
 
 	// Pagination N
-	function yes_user_pagination_number($post_type = '') {
-		if ( $post_type != '' ) {
+	function yes_user_pagination_number($post_type = '', $post_type_category = '', $slug = '') {
+		if ( $post_type != ''  && $post_type_category == '' && $slug == '' ) {
 			$args = array( 'post_type' => $post_type );
-			$wp_query = new WP_Query( $args );
+			$wp_query = new WP_Query($args);
+		} elseif ($post_type != '' && $post_type_category != '' && $slug != '') {
+			$args = array(
+				'post_type' => $post_type,
+				'tax_query' => array(
+					array(
+						'taxonomy' => $post_type_category,
+						/*
+							'field' : Select taxonomy term by. Possible values are ‘term_id’, ‘name’, ‘slug’ or ‘term_taxonomy_id’. Default value is ‘term_id’.
+							'terms' : (int/string/array) depending on 'field' params
+						*/
+						'field' => 'slug',
+						'terms' => $slug,
+					)
+				)
+			);
+			$wp_query = new WP_Query($args);
 		} else {
 			global $wp_query; // Make WP_Query Global
 		}
@@ -155,11 +171,11 @@
 	function wpb_set_post_views($postID) {
 		$count_key = 'wpb_post_views_count';
 		$count = get_post_meta($postID, $count_key, true);
-		if($count==''){
+		if($count=='') {
 			$count = 0;
 			delete_post_meta($postID, $count_key);
 			add_post_meta($postID, $count_key, '0');
-		}else{
+		} else {
 			$count++;
 			update_post_meta($postID, $count_key, $count);
 		}
@@ -168,7 +184,6 @@
 	remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
 
-	// Get Template Name
 	function yes_user_get_template_name( $page_id = null ) {
 		if ( ! $template = get_page_template_slug( $page_id ) )
 			return;
@@ -185,6 +200,7 @@
 		return $data['Name'];
 	}
 
+
  //  Function To Get The Custom Taxonomies For Our Custom Post Type
 	function yes_user_get_terms( $postID, $term ) {
 		$terms_list = wp_get_post_terms( $postID, $term );
@@ -200,3 +216,19 @@
 		return $output;
 	}
 
+	// Change Posts Per Page Default Number
+	$option_posts_per_page = get_option( 'posts_per_page' );
+	add_action( 'init', 'my_modify_posts_per_page', 0);
+	function my_modify_posts_per_page() {
+		add_filter( 'option_posts_per_page', 'my_option_posts_per_page' );
+	}
+	function my_option_posts_per_page( $value ) {
+		global $option_posts_per_page;
+		if ( is_tax( 'yes_user_project_category') ) {
+			return 1;
+		} elseif ( yes_user_get_template_name() == 'Our Work Page' ) {
+			return 2;
+		} else {
+			return $option_posts_per_page;
+		}
+	}

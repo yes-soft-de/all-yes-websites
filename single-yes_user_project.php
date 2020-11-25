@@ -37,21 +37,6 @@
 		          <div class="post-content mt-3">
 								<?php the_content(); ?>
 		          </div>
-		          <p class="post-categories">
-		            <i class="fa fa-tags fa-fw"></i><?php pl_e( 'Categories' ) ?> :
-								<?php
-									// Print The Categories
-									the_category(', ');
-									echo '<br />';
-									// Check If There Is Tags Or Not
-									if (has_tag()) {
-										echo '<i class="fa fa-tags fa-fw"></i> ';
-										the_tags();
-									} else {
-										echo '<i class="fa fa-tags fa-fw"></i>' . pll_( 'Tags: There\'s No Tags For This Post' );
-									}
-								?>
-		          </p>
 		        </div>
 						<?php
 					} // End While Loop

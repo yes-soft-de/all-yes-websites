@@ -13,7 +13,8 @@
 				<div class="d-none d-md-block col-md-4 first-side">
           <?php include('sidebar.php'); ?>
 				</div>
-				<div class="col-12 col-md-8 blog-posts">
+				<div class="col-12 col-md-8 col-lg-7 blog-posts mx-auto">
+          <div class="container">
 					<div class="row">
 						<?php
 	            if ( have_posts() ):
@@ -24,6 +25,7 @@
 							endif;
 	          ?>
 					</div><!--.row-->
+          </div>
 				</div><!--.col-12-->
 				<div class="col-12 col-sm-10 mx-auto d-md-none second-side">
 					<?php include('sidebar.php'); ?>

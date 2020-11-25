@@ -13,7 +13,7 @@
           <div   class="col-12 col-sm-6 col-lg-4 mx-auto">
             <div class="service-box mb-3 mb-md-5 p-2 p-md-4 service-slide-box border-<?php echo esc_html( $term->slug ); ?>">
               <h4><?php echo esc_html( $term->name ) ?></h4>
-              <p class="text-white"><?php echo esc_html( $term->description ); ?></p>
+              <p class="text-white"><?php echo wp_trim_words(esc_html( $term->description ), 20, '...'); ?></p>
             </div>
           </div>
         <?php endforeach; ?>
@@ -176,7 +176,7 @@
                 <img class="img-fluid" src="<?php echo get_template_directory_uri() . '/images/icons/Header-Left.png' ?>" alt="arrow">
               </div>
               <div class="col-12 col-sm-7 col-md-6 col-lg-7">
-                <h3 class="h2 font-weight-bold"><a href="<?php echo get_term_link( $term->slug, 'yes_user_project_category' ); ?>"><?php echo get_the_title(); ?></a></h3>
+                <h3 class="h2 font-weight-bold"><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
                 <?php echo yes_user_get_terms( $post->ID, 'yes_user_project_category' ); ?>
                 <p class="lead"><?php echo get_the_excerpt(); ?></p>
               </div>

@@ -23,7 +23,8 @@
 				'posts_per_page' => 4,
 				'meta_key' => 'wpb_post_views_count',
 				'orderby' => 'meta_value_num',
-				'order' => 'DESC'
+				'order' => 'DESC',
+				'post_status' => 'publish'
 			);
 			$popularpost = new WP_Query( $args );
 			if ( $popularpost->have_posts() ):
@@ -39,7 +40,7 @@
                   </a>
                 </div>
                 <div class="col-8">
-                  <h4><a href="<?php the_permalink(); ?>"><?php echo get_the_title() ?></a></h4>
+                  <h4><a href="<?php the_permalink(); ?>" title="<?php echo get_the_title(); ?>"><?php echo wp_trim_words(get_the_title(), 2, '...'); ?></a></h4>
                   <span class="text-muted"><i class="fa fa-clock-o fa-fw"></i><?php the_time( 'F J, Y' ); ?></span>
                 </div>
               </div><!--.row-->

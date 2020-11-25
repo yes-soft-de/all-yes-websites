@@ -18,7 +18,7 @@ $translationWords = array(
 	'Messages', 'Message', 'No Messages Found', 'User Email', 'User Email Address',
 
 	// Blog
-	'Best Read', 'Yes user newsletter',
+	'Best Read', 'Yes user newsletter', 'Keep in touch with all news and studies of UX Field', 'Tags', 'About The Author',
 	// Say Yes Landing Page
 	'Say Yes To ...', 'Say Yes To Perfection', 'Say Yes To Creativity,', 'Say Yes To High Professionalism,', 'Say Yes To Excellent User Experience,', 'and Technology.', 'Say Yes To Yes User Company', 'Home', 'Contact Us', 'Products',
 	// Products
