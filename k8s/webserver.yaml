@@ -1,0 +1,79 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: wordpress
+  name: yes-user-wordpress
+  namespace: yes-user
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wordpress
+ 
+  template:
+    metadata:
+      labels:
+        app: wordpress
+    spec:
+      containers:
+        - env:
+            - name: WORDPRESS_DB_HOST
+              value: wordpress-mysql
+            - name: WORDPRESS_DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: password
+                  name: mysql
+          image: gcr.io/yescloud/github.com/yes-soft-de/smarty
+          imagePullPolicy: Always
+          name: wordpresse
+          ports:
+            - containerPort: 8000
+              name: wordpress
+              protocol: TCP
+          volumeMounts:
+          - name: yes-user-persistent-storage
+            mountPath: /var/www/html/wp-content/uploads
+
+      volumes:
+        - name: yes-user-persistent-storage
+          persistentVolumeClaim:
+            claimName: yes-user-pv-claim     
+
+            #
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: wordpress
+  name: yes-user-wordpress-mysql
+  namespace: yes-user
+spec:
+
+  ports:
+    - port: 3306
+      protocol: TCP
+      targetPort: 3306
+  selector:
+    app: wordpress
+
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+ 
+    app: wordpress
+  name: wordpress
+  namespace: yes-user
+spec:
+  ports:
+    - nodePort: 30914
+      port: 80
+      protocol: TCP
+      targetPort: 80
+  selector:
+    app: wordpress
+  type: LoadBalancer
