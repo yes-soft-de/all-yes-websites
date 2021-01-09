@@ -25,7 +25,7 @@ spec:
                 secretKeyRef:
                   key: password
                   name: mysql
-          image: gcr.io/yescloud/github.com/yes-soft-de/smarty
+          image: gcr.io/pc-api-6479467557629758909-343/yesuser
           imagePullPolicy: Always
           name: wordpresse
           ports:
