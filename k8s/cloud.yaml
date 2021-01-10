@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: apache
+  name: yes-user-webserver
+  namespace: yes-user
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apache
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: apache
+    spec:
+      containers:
+        - env:
+            - name: WORDPRESS_DB_HOST
+              value: yes-user-mysql8-service
+            - name: WORDPRESS_DB_PASSWORD
+              value: .sweetpwd.
+          image: >-
+            gcr.io/pc-api-6479467557629758909-343/github_yes-soft-de_all-yes-websites
+          imagePullPolicy: Always
+          name: php-apache
+          ports:
+            - containerPort: 80
+              protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  finalizers:
+    - service.kubernetes.io/load-balancer-cleanup
+  labels:
+    run: yes-user-web-service
+  name: yes-user-web-service
+  namespace: yes-user
+spec:
+  clusterIP: 10.36.2.197
+  externalTrafficPolicy: Cluster
+  ports:
+    - nodePort: 31067
+      port: 80
+      protocol: TCP
+      targetPort: 80
+  selector:
+    app: apache
+  sessionAffinity: None
+  type: LoadBalancer
