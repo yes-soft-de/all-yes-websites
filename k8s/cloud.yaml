@@ -34,12 +34,22 @@ spec:
             - containerPort: 80
               protocol: TCP
           volumeMounts:
-            - mountPath: /var/www/html/wp-content
+            - mountPath: /var/www/html/wp-content/uploads
               name: pvc-sym-m
+            - mountPath: /var/www/html/wp-content/plugins
+              name: pvc-sym-p
+            - mountPath: /var/www/html/wp-content/languages
+              name: pvc-sym-l
       volumes:
         - name: pvc-sym-m
           persistentVolumeClaim:
             claimName: yes-user-pvc-sym-cont
+        - name: pvc-sym-p
+          persistentVolumeClaim:
+            claimName: yes-user-pvc-sym-cont
+        - name: pvc-sym-l
+          persistentVolumeClaim:
+            claimName: yes-user-pvc-sym-cont            
 ---
 apiVersion: v1
 kind: Service
