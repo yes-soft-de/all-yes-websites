@@ -46,10 +46,10 @@ spec:
             claimName: yes-user-pvc-sym-cont
         - name: pvc-sym-p
           persistentVolumeClaim:
-            claimName: yes-user-pvc-sym-cont
+            claimName: yes-user-pvc-sym-p
         - name: pvc-sym-l
           persistentVolumeClaim:
-            claimName: yes-user-pvc-sym-cont            
+            claimName: yes-user-pvc-sym-l        
 ---
 apiVersion: v1
 kind: Service
