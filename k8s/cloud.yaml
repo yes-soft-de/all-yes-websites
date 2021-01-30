@@ -27,31 +27,36 @@ spec:
             - name: WORDPRESS_DB_PASSWORD
               value: .sweetpwd.
           image: >-
-            gcr.io/pc-api-6479467557629758909-343/github_yes-soft-de_all-yes-websites
+            gcr.io/pc-api-6479467557629758909-343/github.com/yes-soft-de/all-yes-websites
           imagePullPolicy: Always
           name: php-apache
           ports:
             - containerPort: 80
               protocol: TCP
+          volumeMounts:
+            - mountPath: /var/www/html/wp-content
+              name: pvc-sym-m
+      volumes:
+        - name: pvc-sym-m
+          persistentVolumeClaim:
+            claimName: yes-user-pvc-sym-cont
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  finalizers:
-    - service.kubernetes.io/load-balancer-cleanup
   labels:
     run: yes-user-web-service
   name: yes-user-web-service
   namespace: yes-user
 spec:
-  clusterIP: 10.36.2.197
+  clusterIP: 10.36.5.134
   externalTrafficPolicy: Cluster
   ports:
-    - nodePort: 31067
+    - nodePort: 32714
       port: 80
       protocol: TCP
       targetPort: 80
   selector:
     app: apache
   sessionAffinity: None
-  type: LoadBalancer
+  type: NodePort
