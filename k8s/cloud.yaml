@@ -23,7 +23,7 @@ spec:
       containers:
         - env:
             - name: WORDPRESS_DB_HOST
-              value: yes-user-mysql8-service
+              value: server-mysql8-service
             - name: WORDPRESS_DB_PASSWORD
               value: .sweetpwd.
           image: >-
